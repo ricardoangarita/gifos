@@ -1,7 +1,361 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 * {
-  margin: 0;
-  padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  overflow: hidden;
+}
+
+.night-container {
+  overflow: hidden;
+}
+
+.container {
+  border-top: 5px solid #572ee5;
+  border-bottom: 5px solid #572ee5;
+}
+
+.night-container {
+  border-top: 5px solid #000;
+  border-bottom: 5px solid #000;
+}
+
+header nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  height: 95px;
+}
+
+header nav .cover-menu {
+  background: rgba(87, 46, 229, 0.9);
+  height: 100vh;
+  display: none;
+  position: absolute;
+  top: 95px;
+}
+
+header nav .night-cover-menu {
+  background-color: #000;
+}
+
+header nav #logo {
+  padding: 5vw 0 2.9vw 5.9vw;
+}
+
+header nav .night-logo {
+  content: url("/assets/logo-mobile-modo-noct.svg");
+}
+
+header nav #burguer-menu {
+  cursor: pointer;
+  padding: 8vw 7.2vw 5.8vw 0;
+}
+
+header nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100vw;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 17.2px;
+}
+
+header nav ul li {
+  cursor: pointer;
+  list-style: none;
+  padding-top: 17px;
+}
+
+header nav ul li a {
+  width: 100vw;
+  text-decoration: none;
+  text-transform: capitalize;
+  font-family: "Montserrat", sans-serif;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+header nav ul li a span {
+  text-transform: uppercase;
+}
+
+header nav ul li a .more {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+header nav ul li a .more span {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #572ee5;
+  border-radius: 50%;
+  padding: 3px;
+  font-family: "Montserrat", sans-serif;
+  color: #572ee5;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+header nav ul li .menu-separator {
+  padding-top: 2.9vh;
+  width: 10.9vw;
+  margin: auto;
+  border-bottom: 1px solid #fff;
+  opacity: 0.5;
+}
+
+header .night-nav {
+  background-color: #37383c;
+}
+
+main .gifos {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+main .gifos h1 {
+  font-family: "Montserrat", sans-serif;
+  color: #572ee5;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 33px;
+  width: 100vw;
+  padding-top: 7px;
+  text-align: center;
+}
+
+main .gifos h1 span {
+  text-transform: uppercase;
+  color: #5ed7c6;
+}
+
+main .gifos .main-image {
+  margin-top: 31px;
+  width: 72.8%;
+  height: 10.8%;
+}
+
+main .gifos .search-gifo-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 4.2%;
+  width: 89.1%;
+  border: 1px solid #572ee5;
+  background-color: #fff;
+  border-radius: 27px;
+}
+
+main .gifos .search-gifo-section #search-gifos {
+  width: 57.3%;
+  height: 1.8%;
+  font-family: "Roboto", sans-serif;
+  color: #000;
+  font-size: 1rem;
+  font-weight: 400;
+  text-align: left;
+  line-height: 19px;
+  border-style: hidden;
+  outline: none;
+  margin: 1.2vh 0 1.1vh 14.7vw;
+}
+
+main .gifos .search-gifo-section #search-gifos::-webkit-input-placeholder {
+  font-family: "Roboto", sans-serif;
+  color: #6b7989;
+  font-size: 1rem;
+  font-weight: 400;
+  text-align: left;
+  line-height: 19px;
+}
+
+main .gifos .search-gifo-section #search-gifos:-ms-input-placeholder {
+  font-family: "Roboto", sans-serif;
+  color: #6b7989;
+  font-size: 1rem;
+  font-weight: 400;
+  text-align: left;
+  line-height: 19px;
+}
+
+main .gifos .search-gifo-section #search-gifos::-ms-input-placeholder {
+  font-family: "Roboto", sans-serif;
+  color: #6b7989;
+  font-size: 1rem;
+  font-weight: 400;
+  text-align: left;
+  line-height: 19px;
+}
+
+main .gifos .search-gifo-section #search-gifos::placeholder {
+  font-family: "Roboto", sans-serif;
+  color: #6b7989;
+  font-size: 1rem;
+  font-weight: 400;
+  text-align: left;
+  line-height: 19px;
+}
+
+main .gifos .search-gifo-section img {
+  margin-right: 5.3%;
+}
+
+main .gifos .search-gifo-section img:hover {
+  cursor: pointer;
+}
+
+main .gifos .trending {
+  margin-top: 31px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .gifos .trending span {
+  font-family: "Montserrat", sans-serif;
+  color: #572ee5;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: capitalize;
+  width: 236px;
+  height: 25px;
+  line-height: 25px;
+  text-align: center;
+}
+
+main .gifos .trending p {
+  margin-top: 2px;
+  width: 225px;
+  height: 50px;
+  font-family: "Montserrat", sans-serif;
+  color: #572ee5;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 25px;
+  text-transform: capitalize;
+  text-align: center;
+}
+
+main .community-gifos {
+  margin-top: 45px;
+  background-color: #f3f5f8;
+}
+
+main .community-gifos h2 {
+  font-family: "Montserrat", sans-serif;
+  color: #572ee5;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 30px;
+  padding-top: 46px;
+  text-align: center;
+}
+
+main .community-gifos p {
+  font-family: "Roboto", sans-serif;
+  color: #000;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 23px;
+  margin-top: 7px;
+  text-align: center;
+}
+
+main .community-gifos .gallery-gif img {
+  height: 187px;
+  width: 243px;
+}
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+footer span {
+  font-family: "Roboto", sans-serif;
+  color: #000;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 18px;
+  margin-top: 47px;
+  text-align: center;
+}
+
+footer .social-media-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  margin: 24px auto 0 auto;
+  width: 40vw;
+}
+
+footer .social-media-icon img {
+  height: 20px;
+  width: 20px;
+}
+
+footer .copyright {
+  font-family: "Roboto", sans-serif;
+  color: #000;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: center;
+  margin-bottom: 23px;
 }
 /*# sourceMappingURL=style.css.map */

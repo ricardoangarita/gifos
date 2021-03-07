@@ -5,31 +5,67 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gifos</title>
+    <link rel="stylesheet" href="./styles/style.css" />
   </head>
   <body>
     <div class="container">
-      <head>
+      <header>
         <nav>
-          <img src="./assets/logo-mobile.svg" alt="logo" />
-          <img src="./assets/burger.svg" alt="burguer menu" />
-          <li>
-            <a href="#">modo nocturno</a>
-          </li>
-          <li>
-            <a href="#">favoritos</a>
-          </li>
-          <li>
-            <a href="#">mis gifos</a>
-          </li>
-          <li>
-            <a href="#">
-              <div class="more">+</div>
-            </a>
-          </li>
+          <img id="logo" src="./assets/logo-mobile.svg" alt="logo" />
+          <img onclick="UpdateMenuIcon()" id="burguer-menu" src="./assets/burger.svg" alt="burguer menu" />
+          <div class="cover-menu">
+            <ul>
+              <li>
+                <a id="shift-mode" onclick="NightMode()" href="#">modo nocturno</a>
+                <div class="menu-separator"></div>
+              </li>
+              <li>
+                <a href="#">favoritos</a>
+                <div class="menu-separator"></div>
+              </li>
+              <li>
+                <a href="#">mis <span>gifos</span></a>
+                <div class="menu-separator"></div>
+              </li>
+            </ul>
+          </div>
         </nav>
-      </head>
-      <main></main>
-      <footer></footer>
+      </header>
+      <main>
+        <section class="gifos">
+          <h1>
+            Inspírate, busca, guarda, y crea los mejores
+            <span>gifos</span>
+          </h1>
+          <img class="main-image" src="./assets/ilustra_header.svg" alt="imagen encabezado" />
+          <div class="search-gifo-section">
+            <input type="text" name="search-gifos" id="search-gifos" placeholder="Busca GIFOS y más" />
+            <img src="./assets/icon-search.svg" alt="icon de búsqueda" />
+          </div>
+          <div class="trending">
+            <span>trending:</span>
+            <p>reaction, entertainment, sports, stickers, artists</p>
+          </div>
+        </section>
+        <section class="community-gifos">
+          <h2>Trending GIFOS</h2>
+          <p>Mira los últimos GIFOS de nuestra comunidad</p>
+          <div class="gallery-gif">
+            <img src="" alt="" />
+          </div>
+        </section>
+      </main>
+      <footer>
+        <span>Compartir en:</span>
+        <div class="social-media-icon">
+          <img src="./assets/icon_facebook.svg" alt="Facebook" />
+          <img src="./assets/icon-twitter.svg" alt="Twitter" />
+          <img src="./assets/icon_instagram.svg" alt="Instragram" />
+        </div>
+        <span class="copyright">© GIFOS 2020 All Rights Reserved.</span>
+      </footer>
     </div>
+    <!-- Scripts -->
+    <script src="./scripts/app.js"></script>
   </body>
 </html>

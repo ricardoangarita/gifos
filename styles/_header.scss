@@ -1,0 +1,72 @@
+header {
+  nav {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    height: 95px;
+    .cover-menu {
+      background: rgba(87, 46, 229, 0.9);
+      height: 100vh;
+      display: none;
+      position: absolute;
+      top: 95px;
+    }
+    .night-cover-menu {
+      background-color: $fourth-color;
+    }
+    #logo {
+      padding: 5vw 0 2.9vw 5.9vw;
+    }
+    .night-logo {
+      content: url('/assets/logo-mobile-modo-noct.svg');
+    }
+    #burguer-menu {
+      cursor: pointer;
+      padding: 8vw 7.2vw 5.8vw 0;
+    }
+    ul {
+      display: flex;
+      flex-direction: column;
+      width: 100vw;
+      justify-content: center;
+      align-items: center;
+      padding-top: 17.2px;
+      li {
+        cursor: pointer;
+        list-style: none;
+        padding-top: 17px;
+        a {
+          width: 100vw;
+          text-decoration: none;
+          text-transform: capitalize;
+          @include gifos-font($first-font, $second-color, 15px, 700);
+          span {
+            text-transform: uppercase;
+          }
+          .more {
+            display: flex;
+            justify-content: center;
+            span {
+              width: 40px;
+              height: 40px;
+              border: 1px solid $first-color;
+              border-radius: 50%;
+              padding: 3px;
+              @include gifos-font($first-font, $first-color, 1.5rem, 700);
+            }
+          }
+        }
+        .menu-separator {
+          padding-top: 2.9vh;
+          width: 10.9vw;
+          margin: auto;
+          border-bottom: 1px solid $second-color;
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+  .night-nav {
+    background-color: $seventh-color;
+  }
+}

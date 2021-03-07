@@ -1,0 +1,99 @@
+main {
+  .gifos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: nowrap;
+    h1 {
+      @include gifos-font($first-font, $first-color, 25px, 700);
+      line-height: 33px;
+      width: 100vw;
+      padding-top: 7px;
+      text-align: center;
+      span {
+        text-transform: uppercase;
+        color: $third-color;
+      }
+    }
+    .main-image {
+      margin-top: 31px;
+      width: 72.8%;
+      height: 10.8%;
+    }
+    .search-gifo-section {
+      display: flex;
+      justify-content: space-between;
+      height: 4.2%;
+      width: 89.1%;
+      border: 1px solid $first-color;
+      background-color: $second-color;
+      border-radius: 27px;
+      #search-gifos {
+        width: 57.3%;
+        height: 1.8%;
+        @include gifos-font($second-font, $fourth-color, 1rem, 400);
+        text-align: left;
+        line-height: 19px;
+        border-style: hidden;
+        outline: none;
+        margin: 1.2vh 0 1.1vh 14.7vw;
+        &::placeholder {
+          @include gifos-font($second-font, $fifth-color, 1rem, 400);
+          text-align: left;
+          line-height: 19px;
+        }
+      }
+      img {
+        margin-right: 5.3%;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+    .trending {
+      margin-top: 31px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      span {
+        @include gifos-font($first-font, $first-color, 1rem, 700);
+        text-transform: capitalize;
+        width: 236px;
+        height: 25px;
+        line-height: 25px;
+        text-align: center;
+      }
+      p {
+        margin-top: 2px;
+        width: 225px;
+        height: 50px;
+        @include gifos-font($first-font, $first-color, 14px, 500);
+        line-height: 25px;
+        text-transform: capitalize;
+        text-align: center;
+      }
+    }
+  }
+  .community-gifos {
+    margin-top: 45px;
+    background-color: $sixth-color;
+    h2 {
+      @include gifos-font($first-font, $first-color, 20px, 700);
+      line-height: 30px;
+      padding-top: 46px;
+      text-align: center;
+    }
+    p {
+      @include gifos-font($second-font, $fourth-color, 1rem, 400);
+      line-height: 23px;
+      margin-top: 7px;
+      text-align: center;
+    }
+    .gallery-gif {
+      img {
+        height: 187px;
+        width: 243px;
+      }
+    }
+  }
+}
