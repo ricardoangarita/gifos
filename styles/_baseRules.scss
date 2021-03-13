@@ -9,5 +9,5 @@
 }
 .night-container {
   @extend %night-border;
-  overflow: hidden;
+  background-color: $seventh-color;
 }

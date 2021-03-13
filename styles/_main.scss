@@ -4,7 +4,7 @@ main {
     flex-direction: column;
     align-items: center;
     flex-wrap: nowrap;
-    h1 {
+    .message {
       @include gifos-font($first-font, $first-color, 25px, 700);
       line-height: 33px;
       width: 100vw;
@@ -14,6 +14,9 @@ main {
         text-transform: uppercase;
         color: $third-color;
       }
+    }
+    .night-message {
+      color: $second-color;
     }
     .main-image {
       margin-top: 31px;
@@ -73,27 +76,47 @@ main {
         text-align: center;
       }
     }
+    .night-trending {
+      span {
+        color: $second-color;
+      }
+      p {
+        color: $second-color;
+      }
+    }
   }
   .community-gifos {
     margin-top: 45px;
     background-color: $sixth-color;
+    display: flex;
+    flex-direction: column;
     h2 {
       @include gifos-font($first-font, $first-color, 20px, 700);
       line-height: 30px;
       padding-top: 46px;
       text-align: center;
     }
-    p {
+    span {
       @include gifos-font($second-font, $fourth-color, 1rem, 400);
       line-height: 23px;
       margin-top: 7px;
       text-align: center;
     }
     .gallery-gif {
+      margin-top: 32px;
       img {
         height: 187px;
         width: 243px;
       }
+    }
+  }
+  .night-community-gifos {
+    background-color: $eighth-color;
+    h2 {
+      color: $second-color;
+    }
+    span {
+      color: $second-color;
     }
   }
 }

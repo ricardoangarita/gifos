@@ -16,7 +16,7 @@
           <div class="cover-menu">
             <ul>
               <li>
-                <a id="shift-mode" onclick="NightMode()" href="#">modo nocturno</a>
+                <a id="shift-mode" onclick="UpdatePresentationMode()" href="#">modo nocturno</a>
                 <div class="menu-separator"></div>
               </li>
               <li>
@@ -33,7 +33,7 @@
       </header>
       <main>
         <section class="gifos">
-          <h1>
+          <h1 class="message">
             Inspírate, busca, guarda, y crea los mejores
             <span>gifos</span>
           </h1>
@@ -49,20 +49,23 @@
         </section>
         <section class="community-gifos">
           <h2>Trending GIFOS</h2>
-          <p>Mira los últimos GIFOS de nuestra comunidad</p>
+          <span>Mira los últimos</span>
+          <span>GIFOS de nuestra comunidad</span>
           <div class="gallery-gif">
             <img src="" alt="" />
           </div>
         </section>
       </main>
       <footer>
-        <span>Compartir en:</span>
-        <div class="social-media-icon">
-          <img src="./assets/icon_facebook.svg" alt="Facebook" />
-          <img src="./assets/icon-twitter.svg" alt="Twitter" />
-          <img src="./assets/icon_instagram.svg" alt="Instragram" />
+        <div class="social-media-section">
+          <span>Compartir en:</span>
+          <div class="social-media-icon">
+            <img id="facebook" src="./assets/icon_facebook.svg" alt="Facebook" />
+            <img id="twitter" src="./assets/icon-twitter.svg" alt="Twitter" />
+            <img id="instagram" src="./assets/icon_instagram.svg" alt="Instragram" />
+          </div>
+          <span class="copyright">© GIFOS 2020 All Rights Reserved.</span>
         </div>
-        <span class="copyright">© GIFOS 2020 All Rights Reserved.</span>
       </footer>
     </div>
     <!-- Scripts -->

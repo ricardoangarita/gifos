@@ -12,7 +12,7 @@
 }
 
 .night-container {
-  overflow: hidden;
+  background-color: #37383c;
 }
 
 .container {
@@ -148,7 +148,7 @@ main .gifos {
       flex-wrap: nowrap;
 }
 
-main .gifos h1 {
+main .gifos .message {
   font-family: "Montserrat", sans-serif;
   color: #572ee5;
   font-size: 25px;
@@ -159,9 +159,13 @@ main .gifos h1 {
   text-align: center;
 }
 
-main .gifos h1 span {
+main .gifos .message span {
   text-transform: uppercase;
   color: #5ed7c6;
+}
+
+main .gifos .night-message {
+  color: #fff;
 }
 
 main .gifos .main-image {
@@ -281,9 +285,24 @@ main .gifos .trending p {
   text-align: center;
 }
 
+main .gifos .night-trending span {
+  color: #fff;
+}
+
+main .gifos .night-trending p {
+  color: #fff;
+}
+
 main .community-gifos {
   margin-top: 45px;
   background-color: #f3f5f8;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 main .community-gifos h2 {
@@ -296,7 +315,7 @@ main .community-gifos h2 {
   text-align: center;
 }
 
-main .community-gifos p {
+main .community-gifos span {
   font-family: "Roboto", sans-serif;
   color: #000;
   font-size: 1rem;
@@ -306,12 +325,28 @@ main .community-gifos p {
   text-align: center;
 }
 
+main .community-gifos .gallery-gif {
+  margin-top: 32px;
+}
+
 main .community-gifos .gallery-gif img {
   height: 187px;
   width: 243px;
 }
 
-footer {
+main .night-community-gifos {
+  background-color: #222326;
+}
+
+main .night-community-gifos h2 {
+  color: #fff;
+}
+
+main .night-community-gifos span {
+  color: #fff;
+}
+
+footer .social-media-section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -323,7 +358,7 @@ footer {
       align-content: center;
 }
 
-footer span {
+footer .social-media-section span {
   font-family: "Roboto", sans-serif;
   color: #000;
   font-size: 15px;
@@ -333,7 +368,7 @@ footer span {
   text-align: center;
 }
 
-footer .social-media-icon {
+footer .social-media-section .social-media-icon {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -344,12 +379,24 @@ footer .social-media-icon {
   width: 40vw;
 }
 
-footer .social-media-icon img {
+footer .social-media-section .social-media-icon img {
   height: 20px;
   width: 20px;
 }
 
-footer .copyright {
+footer .social-media-section .social-media-icon #facebook:hover {
+  content: url("/assets/icon_facebook_hover.svg");
+}
+
+footer .social-media-section .social-media-icon #twitter:hover {
+  content: url("/assets/icon-twitter-hover.svg");
+}
+
+footer .social-media-section .social-media-icon #instagram:hover {
+  content: url("/assets/icon_instagram-hover.svg");
+}
+
+footer .social-media-section .copyright {
   font-family: "Roboto", sans-serif;
   color: #000;
   font-size: 14px;
@@ -357,5 +404,25 @@ footer .copyright {
   line-height: 20px;
   text-align: center;
   margin-bottom: 23px;
+}
+
+footer .night-social-media-section span {
+  color: #fff;
+}
+
+footer .night-social-media-section #facebook {
+  content: url("/assets/icon_facebook_noc.svg");
+}
+
+footer .night-social-media-section #twitter {
+  content: url("/assets/icon_twitter_noc.svg");
+}
+
+footer .night-social-media-section #instagram {
+  content: url("/assets/icon_instagram_noc.svg");
+}
+
+footer .night-social-media-section .copyright {
+  color: #fff;
 }
 /*# sourceMappingURL=style.css.map */
