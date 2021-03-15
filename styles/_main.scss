@@ -53,6 +53,19 @@ main {
         }
       }
     }
+    .night-search-gifo-section {
+      border: 1px solid $second-color;
+      background-color: $seventh-color;
+      #search-gifos {
+        background-color: $seventh-color;
+      }
+      img {
+        content: url('/assets/icon-search-modo-noct.svg');
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
     .trending {
       margin-top: 31px;
       display: flex;

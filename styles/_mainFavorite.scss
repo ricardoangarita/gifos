@@ -1,0 +1,17 @@
+.favorite-container {
+  .favorite {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    img {
+      width: 28px;
+      height: 21px;
+    }
+    span {
+      @include gifos-font($first-font, $first-color, 20px, 700);
+      line-height: 30px;
+      margin-top: 7px;
+      text-transform: capitalize;
+    }
+  }
+}

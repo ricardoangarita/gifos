@@ -1,5 +1,10 @@
 const light = 'Modo Diurno';
 const dark = 'modo nocturno';
+const SearchHtmlUrl = './html/search.html';
+const FavoriteHtmlUrl = './html/favorite.html';
+const GifosHtmlUrl = './html/gifos.html';
+
+let currentMainHtmlUrl = SearchHtmlUrl;
 
 // Header functionality
 function UpdateMenuIcon() {
@@ -9,20 +14,21 @@ function UpdateMenuIcon() {
 
   if (shift.innerHTML === dark) {
     menu.src = currentIcon === 'burger.svg' ? './assets/close.svg' : './assets/burger.svg';
-  } else if (currentIcon === 'Button-close-modo-noc.svg' && shift.innerHTML === light) {
+  } else if (currentIcon === 'close-modo-noct.svg' && shift.innerHTML === light) {
     menu.src = './assets/burger-modo-noct.svg';
   } else {
-    menu.src = currentIcon === 'close.svg' ? './assets/burger-modo-noct.svg' : './assets/Button-close-modo-noc.svg';
+    menu.src = currentIcon === 'close.svg' ? './assets/burger-modo-noct.svg' : './assets/close-modo-noct.svg';
   }
+
+  if ((currentIcon === 'burger.svg' || currentIcon === 'burger-modo-noct.svg') && currentMainHtmlUrl !== SearchHtmlUrl) {
+    LoadSection(SearchHtmlUrl);
+  }
+
   ShowMenu();
 }
 
-function ShowMenu() {
-  let menuItem = document.getElementsByClassName('cover-menu');
-  menuItem[0].style.display = menuItem[0].style.display === 'none' || menuItem[0].style.display === '' ? 'block' : 'none';
-}
-
 function UpdatePresentationMode() {
+  currentMainHtmlUrl = SearchHtmlUrl;
   //Header
   UpdatePresentationModeText();
 
@@ -44,8 +50,13 @@ function UpdatePresentationMode() {
   //Main
   let message = document.getElementsByClassName('message')[0];
   message.classList.toggle('night-message');
+
+  let searchGifoSection = document.getElementsByClassName('search-gifo-section')[0];
+  searchGifoSection.classList.toggle('night-search-gifo-section');
+
   let trending = document.getElementsByClassName('trending')[0];
   trending.classList.toggle('night-trending');
+
   let communityGifos = document.getElementsByClassName('community-gifos')[0];
   communityGifos.classList.toggle('night-community-gifos');
 
@@ -61,4 +72,22 @@ function UpdatePresentationModeText() {
   } else {
     shift.innerHTML = dark;
   }
+}
+
+//Cross functions
+async function FetchHtmlAsText(url) {
+  return await (await fetch(url)).text();
+}
+
+function ShowMenu() {
+  let menuItem = document.getElementsByClassName('cover-menu');
+  menuItem[0].style.display = menuItem[0].style.display === 'none' || menuItem[0].style.display === '' ? 'block' : 'none';
+}
+
+async function LoadSection(htmlUrl) {
+  currentMainHtmlUrl = htmlUrl;
+  let htmlText = await FetchHtmlAsText(htmlUrl);
+  let main = document.getElementsByTagName('main')[0];
+  main.innerHTML = htmlText;
+  UpdateMenuIcon();
 }
