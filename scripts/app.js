@@ -1,34 +1,37 @@
-const light = 'Modo Diurno';
-const dark = 'modo nocturno';
-const SearchHtmlUrl = './html/search.html';
-const FavoriteHtmlUrl = './html/favorite.html';
-const GifosHtmlUrl = './html/gifos.html';
+const LIGHT = 'Modo Diurno';
+const DARK = 'modo nocturno';
+const SEARCHHTMLURL = './html/search.html';
+const FAVORITEHTMLURL = './html/favorite.html';
+const GIFOSHTMLURL = './html/gifos.html';
 
-let currentMainHtmlUrl = SearchHtmlUrl;
+let currentMainHtmlUrl = SEARCHHTMLURL;
 
 // Header functionality
-function UpdateMenuIcon() {
+async function UpdateMenuIcon() {
   let menu = document.getElementById('burguer-menu');
   let currentIcon = menu.src.split('/').pop();
   let shift = document.getElementById('shift-mode');
 
-  if (shift.innerHTML === dark) {
+  if (shift.innerHTML === DARK) {
     menu.src = currentIcon === 'burger.svg' ? './assets/close.svg' : './assets/burger.svg';
-  } else if (currentIcon === 'close-modo-noct.svg' && shift.innerHTML === light) {
+  } else if (currentIcon === 'close-modo-noct.svg' && shift.innerHTML === LIGHT) {
     menu.src = './assets/burger-modo-noct.svg';
   } else {
     menu.src = currentIcon === 'close.svg' ? './assets/burger-modo-noct.svg' : './assets/close-modo-noct.svg';
   }
 
-  if ((currentIcon === 'burger.svg' || currentIcon === 'burger-modo-noct.svg') && currentMainHtmlUrl !== SearchHtmlUrl) {
-    LoadSection(SearchHtmlUrl);
+  if ((currentIcon === 'burger.svg' || currentIcon === 'burger-modo-noct.svg') && currentMainHtmlUrl !== SEARCHHTMLURL) {
+    await LoadSection(SEARCHHTMLURL);
+    if (shift.innerHTML === LIGHT) {
+      MainSearchNightMode();
+    }
   }
-
   ShowMenu();
 }
 
-function UpdatePresentationMode() {
-  currentMainHtmlUrl = SearchHtmlUrl;
+async function UpdatePresentationMode() {
+  currentMainHtmlUrl = SEARCHHTMLURL;
+
   //Header
   UpdatePresentationModeText();
 
@@ -38,7 +41,7 @@ function UpdatePresentationMode() {
   let logo = document.getElementById('logo');
   logo.classList.toggle('night-logo');
 
-  UpdateMenuIcon();
+  await UpdateMenuIcon();
 
   let nav = document.getElementsByTagName('nav')[0];
   nav.classList.toggle('night-nav');
@@ -48,14 +51,7 @@ function UpdatePresentationMode() {
   coverMenu.style.display = 'none';
 
   //Main
-  let message = document.getElementsByClassName('message')[0];
-  message.classList.toggle('night-message');
-
-  let searchGifoSection = document.getElementsByClassName('search-gifo-section')[0];
-  searchGifoSection.classList.toggle('night-search-gifo-section');
-
-  let trending = document.getElementsByClassName('trending')[0];
-  trending.classList.toggle('night-trending');
+  MainSearchNightMode();
 
   let communityGifos = document.getElementsByClassName('community-gifos')[0];
   communityGifos.classList.toggle('night-community-gifos');
@@ -67,10 +63,10 @@ function UpdatePresentationMode() {
 
 function UpdatePresentationModeText() {
   let shift = document.getElementById('shift-mode');
-  if (shift.innerHTML === dark) {
-    shift.innerHTML = light;
+  if (shift.innerHTML === DARK) {
+    shift.innerHTML = LIGHT;
   } else {
-    shift.innerHTML = dark;
+    shift.innerHTML = DARK;
   }
 }
 
@@ -80,14 +76,27 @@ async function FetchHtmlAsText(url) {
 }
 
 function ShowMenu() {
-  let menuItem = document.getElementsByClassName('cover-menu');
-  menuItem[0].style.display = menuItem[0].style.display === 'none' || menuItem[0].style.display === '' ? 'block' : 'none';
+  let menuItem = document.getElementsByClassName('cover-menu')[0];
+  menuItem.style.display = menuItem.style.display === 'none' || menuItem.style.display === '' ? 'block' : 'none';
 }
 
 async function LoadSection(htmlUrl) {
   currentMainHtmlUrl = htmlUrl;
   let htmlText = await FetchHtmlAsText(htmlUrl);
-  let main = document.getElementsByTagName('main')[0];
+  let main = document.getElementById('shift-container');
   main.innerHTML = htmlText;
-  UpdateMenuIcon();
+  if (currentMainHtmlUrl !== SEARCHHTMLURL) {
+    await UpdateMenuIcon();
+  }
+}
+
+function MainSearchNightMode() {
+  let message = document.getElementsByClassName('message')[0];
+  message.classList.toggle('night-message');
+
+  let searchGifoSection = document.getElementsByClassName('search-gifo-section')[0];
+  searchGifoSection.classList.toggle('night-search-gifo-section');
+
+  let trending = document.getElementsByClassName('trending')[0];
+  trending.classList.toggle('night-trending');
 }

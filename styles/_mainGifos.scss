@@ -14,4 +14,22 @@
       text-transform: capitalize;
     }
   }
+  .more-gifos {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 78px;
+    span {
+      border: 2px solid $first-color;
+      border-radius: 25px;
+      @include gifos-font($first-font, $first-color, 13px, 700);
+      line-height: 1rem;
+      height: 50px;
+      padding: 17px 0;
+      text-align: center;
+      text-transform: uppercase;
+      vertical-align: middle;
+      width: 127px;
+    }
+  }
 }

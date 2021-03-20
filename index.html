@@ -7,7 +7,7 @@
     <title>Gifos</title>
     <link rel="stylesheet" href="./styles/style.css" />
   </head>
-  <body onload="LoadSection('/html/search.html')">
+  <body onload="LoadSection('./html/search.html')">
     <div class="container">
       <header>
         <nav>
@@ -20,18 +20,28 @@
                 <div class="menu-separator"></div>
               </li>
               <li>
-                <a href="#" onclick="LoadSection('/html/favorite.html')">favoritos</a>
+                <a href="#" onclick="LoadSection('./html/favorite.html')">favoritos</a>
                 <div class="menu-separator"></div>
               </li>
               <li>
-                <a href="#" onclick="LoadSection('/html/gifos.html')">mis <span>gifos</span></a>
+                <a href="#" onclick="LoadSection('./html/gifos.html')">mis <span>gifos</span></a>
                 <div class="menu-separator"></div>
               </li>
             </ul>
           </div>
         </nav>
       </header>
-      <main></main>
+      <main>
+        <div id="shift-container"></div>
+        <section class="community-gifos">
+          <h2>Trending GIFOS</h2>
+          <span>Mira los últimos</span>
+          <span>GIFOS de nuestra comunidad</span>
+          <div class="gallery-gif">
+            <img src="" alt="" />
+          </div>
+        </section>
+      </main>
       <footer>
         <div class="social-media-section">
           <span>Compartir en:</span>

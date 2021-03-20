@@ -391,6 +391,35 @@ main .night-community-gifos span {
   text-transform: capitalize;
 }
 
+.favorite-container .more-favorite {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 78px;
+}
+
+.favorite-container .more-favorite span {
+  border: 2px solid #572ee5;
+  border-radius: 25px;
+  font-family: "Montserrat", sans-serif;
+  color: #572ee5;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1rem;
+  height: 50px;
+  padding: 17px 0;
+  text-align: center;
+  text-transform: uppercase;
+  vertical-align: middle;
+  width: 127px;
+}
+
 .gifos-container .gifos-mine {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -417,6 +446,35 @@ main .night-community-gifos span {
   line-height: 30px;
   margin-top: 7px;
   text-transform: capitalize;
+}
+
+.gifos-container .more-gifos {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 78px;
+}
+
+.gifos-container .more-gifos span {
+  border: 2px solid #572ee5;
+  border-radius: 25px;
+  font-family: "Montserrat", sans-serif;
+  color: #572ee5;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1rem;
+  height: 50px;
+  padding: 17px 0;
+  text-align: center;
+  text-transform: uppercase;
+  vertical-align: middle;
+  width: 127px;
 }
 
 footer .social-media-section {
