@@ -7,7 +7,7 @@ main {
     .message {
       @include gifos-font($first-font, $first-color, 25px, 700);
       line-height: 33px;
-      width: 100vw;
+      width: 75vw;
       padding-top: 7px;
       text-align: center;
       span {
@@ -109,17 +109,88 @@ main {
       padding-top: 46px;
       text-align: center;
     }
-    span {
-      @include gifos-font($second-font, $fourth-color, 1rem, 400);
-      line-height: 23px;
-      margin-top: 7px;
-      text-align: center;
+    .community-message {
+      display: flex;
+      flex-direction: column;
+      span {
+        @include gifos-font($second-font, $fourth-color, 1rem, 400);
+        line-height: 23px;
+        margin-top: 7px;
+        text-align: center;
+      }
     }
-    .gallery-gif {
-      margin-top: 32px;
-      img {
-        height: 187px;
-        width: 243px;
+    .gallery-container {
+      display: flex;
+      #move-left {
+        display: none;
+        height: 40px;
+        width: 40px;
+        content: url('/assets/button-slider-left.svg');
+      }
+      .gallery-gif {
+        margin-top: 32px;
+        padding-left: 5.9vw;
+        display: flex;
+        justify-content: space-evenly;
+        .img-group {
+          position: relative;
+          .gif {
+            height: 187px;
+            width: 243px;
+            margin-left: 2vw;
+            cursor: pointer;
+            &:hover + .img-cover {
+              display: block;
+            }
+          }
+          .img-cover {
+            height: 187px;
+            width: 243px;
+            @include gradient-opacity(0.6);
+            position: absolute;
+            margin-left: inherit;
+            margin-left: 2vw;
+            top: 0;
+            display: none;
+            &:hover {
+              display: block;
+            }
+            .img-action {
+              display: flex;
+              justify-content: flex-end;
+              img {
+                padding-top: 10px;
+                height: 32px;
+                width: 32px;
+                cursor: pointer;
+              }
+              .action-favorite {
+                &:hover {
+                  content: url('../assets/icon-fav-hover.svg');
+                }
+                &:active {
+                  content: url('../assets/icon-fav-active.svg');
+                }
+              }
+              .action-download {
+                &:hover {
+                  content: url('../assets/icon-download-hover.svg');
+                }
+              }
+              .action-maximize {
+                &:hover {
+                  content: url('../assets/icon-max-hover.svg');
+                }
+              }
+            }
+          }
+        }
+      }
+      #move-right {
+        display: none;
+        height: 40px;
+        width: 40px;
+        content: url('/assets/button-slider-right.svg');
       }
     }
   }
@@ -128,8 +199,102 @@ main {
     h2 {
       color: $second-color;
     }
-    span {
-      color: $second-color;
+    .community-message {
+      span {
+        color: $second-color;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $tablet) {
+  main {
+    .gifos {
+      margin-top: 76px;
+      .message {
+        font-size: 35px;
+        line-height: 50px;
+        text-align: center;
+      }
+      .main-image {
+        width: 50vw;
+      }
+      .search-gifo-section {
+        width: 75vw;
+        #search-gifos {
+          width: 40vw;
+          height: 50px;
+          margin-left: 10vw;
+        }
+      }
+      .trending {
+        margin-top: 73px;
+        span {
+          font-size: 18px;
+          line-height: 25px;
+        }
+        p {
+          margin-top: 7px;
+          width: 402px;
+          height: 25px;
+          font-size: 1rem;
+          text-transform: capitalize;
+          text-align: center;
+        }
+      }
+    }
+    .community-gifos {
+      margin-top: 95px;
+      padding-bottom: 95px;
+      h2 {
+        font-size: 25px;
+        padding-top: 67px;
+        text-align: center;
+      }
+      .community-message {
+        flex-direction: row;
+        justify-content: center;
+        span {
+          font-size: 18px;
+          line-height: 21px;
+          margin-right: 1vh;
+        }
+      }
+      .gallery-container {
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        #move-left {
+          display: unset;
+          height: 30px;
+          left: 30px;
+          position: absolute;
+          top: 100px;
+          width: 30px;
+          &:hover {
+            content: url('/assets/Button-Slider-left-hover.svg');
+          }
+        }
+        .gallery-gif {
+          margin: 53px px 0 5px;
+          padding: 0;
+          img {
+            height: 180px;
+            width: 200px;
+          }
+        }
+        #move-right {
+          display: unset;
+          height: 30px;
+          position: absolute;
+          right: 15px;
+          top: 100px;
+          width: 30px;
+          &:hover {
+            content: url('/assets/Button-Slider-right-hover.svg');
+          }
+        }
+      }
     }
   }
 }

@@ -48,7 +48,6 @@ async function UpdatePresentationMode() {
 
   let coverMenu = document.getElementsByClassName('cover-menu')[0];
   coverMenu.classList.toggle('night-cover-menu');
-  coverMenu.style.display = 'none';
 
   //Main
   MainSearchNightMode();
@@ -77,7 +76,7 @@ async function FetchHtmlAsText(url) {
 
 function ShowMenu() {
   let menuItem = document.getElementsByClassName('cover-menu')[0];
-  menuItem.style.display = menuItem.style.display === 'none' || menuItem.style.display === '' ? 'block' : 'none';
+  menuItem.classList.toggle('display-cover-menu');
 }
 
 async function LoadSection(htmlUrl) {

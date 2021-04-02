@@ -59,3 +59,22 @@ footer {
     }
   }
 }
+
+@media screen and (min-width: $tablet) {
+  footer {
+    .social-media-section {
+      flex-direction: row;
+      span {
+        padding-left: 10vw;
+      }
+      .copyright {
+        padding-left: 22vw;
+      }
+      .social-media-icon {
+        width: 20vw;
+        margin: 0;
+        padding-top: 44px;
+      }
+    }
+  }
+}

@@ -5,7 +5,7 @@ header {
     flex-wrap: wrap;
     height: 95px;
     .cover-menu {
-      background: rgba(87, 46, 229, 0.9);
+      @include gradient-opacity(0.9);
       height: 100vh;
       display: none;
       position: absolute;
@@ -13,6 +13,9 @@ header {
     }
     .night-cover-menu {
       background-color: $fourth-color;
+    }
+    .display-cover-menu {
+      display: block;
     }
     #logo {
       padding: 5vw 0 2.9vw 5.9vw;
@@ -43,18 +46,6 @@ header {
           span {
             text-transform: uppercase;
           }
-          .more {
-            display: flex;
-            justify-content: center;
-            span {
-              width: 40px;
-              height: 40px;
-              border: 1px solid $first-color;
-              border-radius: 50%;
-              padding: 3px;
-              @include gifos-font($first-font, $first-color, 1.5rem, 700);
-            }
-          }
         }
         .menu-separator {
           padding-top: 2.9vh;
@@ -64,9 +55,65 @@ header {
           opacity: 0.5;
         }
       }
+      .plus-menu-item {
+        display: none;
+      }
     }
   }
   .night-nav {
     background-color: $seventh-color;
+  }
+}
+
+@media screen and (min-width: $tablet) {
+  header {
+    nav {
+      .cover-menu {
+        display: block;
+        position: unset;
+        height: inherit;
+        background: unset;
+      }
+      #logo {
+        padding: 1vh 0vw 1vh 10vh;
+      }
+      #burguer-menu {
+        display: none;
+      }
+      ul {
+        flex-direction: row;
+        justify-content: space-evenly;
+        padding-top: unset;
+        width: 76vw;
+        li {
+          a {
+            color: $first-color;
+            font-size: 13px;
+            text-transform: uppercase;
+            &:hover {
+              text-decoration: underline;
+              text-decoration-color: $third-color;
+              text-decoration-thickness: 2px;
+            }
+            &:active {
+              color: $active-color;
+              text-decoration: none;
+            }
+          }
+          .menu-separator {
+            display: none;
+          }
+        }
+        .plus-menu-item {
+          display: block;
+          &:hover {
+            content: url('../assets/CTA-crear-gifo-hover.svg');
+          }
+          &:active {
+            content: url('../assets/CTA-crear-gifo-active.svg');
+          }
+        }
+      }
+    }
   }
 }

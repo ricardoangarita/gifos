@@ -4,3 +4,7 @@
   font-size: $size;
   font-weight: $weight;
 }
+
+@mixin gradient-opacity($opacity) {
+  background: rgba(87, 46, 229, $opacity);
+}
