@@ -31,7 +31,6 @@ main {
       border-radius: 27px;
       width: 89.1%;
       flex-wrap: wrap;
-      padding-bottom: 18px;
       .search-bar {
         display: flex;
         justify-content: space-between;
@@ -100,7 +99,7 @@ main {
         background-color: $seventh-color;
       }
       #search-icon {
-        content: url('/assets/icon-search-modo-noct.svg');
+        content: url("/assets/icon-search-modo-noct.svg");
         &:hover {
           cursor: pointer;
         }
@@ -222,7 +221,7 @@ main {
         display: none;
         height: 40px;
         width: 40px;
-        content: url('/assets/button-slider-left.svg');
+        content: url("/assets/button-slider-left.svg");
         border: 1px solid blue;
       }
       .gallery-gif {
@@ -264,20 +263,20 @@ main {
               }
               .action-favorite {
                 &:hover {
-                  content: url('../assets/icon-fav-hover.svg');
+                  content: url("../assets/icon-fav-hover.svg");
                 }
                 &:active {
-                  content: url('../assets/icon-fav-active.svg');
+                  content: url("../assets/icon-fav-active.svg");
                 }
               }
               .action-download {
                 &:hover {
-                  content: url('../assets/icon-download-hover.svg');
+                  content: url("../assets/icon-download-hover.svg");
                 }
               }
               .action-maximize {
                 &:hover {
-                  content: url('../assets/icon-max-hover.svg');
+                  content: url("../assets/icon-max-hover.svg");
                 }
               }
             }
@@ -288,7 +287,7 @@ main {
         display: none;
         height: 40px;
         width: 40px;
-        content: url('/assets/button-slider-right.svg');
+        content: url("/assets/button-slider-right.svg");
       }
     }
   }
