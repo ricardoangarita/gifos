@@ -7,29 +7,29 @@
     <title>Gifos</title>
     <link rel="stylesheet" href="./styles/style.css" />
   </head>
-  <body onload="LoadSection('./html/search.html')">
+  <body>
     <div class="container">
       <header>
         <nav>
           <img id="logo" src="./assets/logo-mobile.svg" alt="logo" />
-          <img onclick="UpdateMenuIcon()" id="burguer-menu" src="./assets/burger.svg" alt="burguer menu" />
+          <img id="burguer-menu" src="./assets/burger.svg" alt="burguer menu" />
           <div class="cover-menu">
             <ul>
               <li>
-                <a id="shift-mode" onclick="UpdatePresentationMode()" href="#">modo nocturno</a>
+                <a class="menu-item" id="shift-mode" href="#">modo nocturno</a>
                 <div class="menu-separator"></div>
               </li>
               <li>
-                <a href="#" onclick="LoadSection('./html/favorite.html')">favoritos</a>
+                <a id="favorite-url" class="menu-item" href="#">favoritos</a>
                 <div class="menu-separator"></div>
               </li>
               <li>
-                <a href="#" onclick="LoadSection('./html/gifos.html')">mis <span>gifos</span></a>
+                <a id="gifos-url" class="menu-item" href="#">mis <span>gifos</span></a>
                 <div class="menu-separator"></div>
               </li>
               <li class="plus-menu-item">
-                <a href="#">
-                  <img src="./assets/button-crear-gifo.svg" alt="" />
+                <a class="menu-item" href="#">
+                  <img id="create-gifo" src="./assets/button-crear-gifo.svg" alt="" />
                 </a>
               </li>
             </ul>
@@ -44,42 +44,7 @@
             <span>Mira los últimos</span>
             <span>GIFOS de nuestra comunidad</span>
           </div>
-          <div class="gallery-container">
-            <img id="move-left" src="" alt="imagen izquierda galleria gifos" />
-            <div class="gallery-gif">
-              <div class="img-group">
-                <img class="gif" src="https://th.bing.com/th/id/R34e36878eb5534b38a765b12f6389e5b?rik=%2fxU9cdwUI%2bsk%2fw&riu=http%3a%2f%2fforeveryoungadult.com%2f_uploads%2fimages2%2fdisney_hercules.jpg&ehk=p83hdxQ4bwXzncOiE%2fnRfn6K3lvsyBMUh9UTT5Mnb5M%3d&risl=&pid=ImgRaw" alt="" />
-                <div class="img-cover">
-                  <div class="img-action">
-                    <img class="action-favorite" src="./assets/icon-fav.svg" alt="favorito" />
-                    <img class="action-download" src="./assets/icon-download.svg" alt="descargar" />
-                    <img class="action-maximize" src="./assets/icon-max-normal.svg" alt="maximizar" />
-                  </div>
-                </div>
-              </div>
-              <div class="img-group">
-                <img class="gif" src="https://th.bing.com/th/id/Raf8826d0f8d8427cde2fcf4ef8a3b391?rik=H%2bY%2btBDhszejug&riu=http%3a%2f%2f3.bp.blogspot.com%2f-MGvI3H5TaQw%2fTxqVrb0iEvI%2fAAAAAAAAAVc%2fOq0kSljBRgY%2fs1600%2fMegara-disney-leading-ladies-16434218-354-348.jpg&ehk=8mfZAqYqYe6zIX6VzNefq0vxOY6lpAtXXhCX0hlG1Is%3d&risl=&pid=ImgRaw" alt="" />
-                <div class="img-cover">
-                  <div class="img-action">
-                    <img class="action-favorite" src="./assets/icon-fav.svg" alt="favorito" />
-                    <img class="action-download" src="./assets/icon-download.svg" alt="descargar" />
-                    <img class="action-maximize" src="./assets/icon-max-normal.svg" alt="maximizar" />
-                  </div>
-                </div>
-              </div>
-              <div class="img-group">
-                <img class="gif" src="https://static.quizur.com/i/b/5b68740bcfde44.305461445b68740bc4e674.53091540.jpg" alt="" />
-                <div class="img-cover">
-                  <div class="img-action">
-                    <img class="action-favorite" src="./assets/icon-fav.svg" alt="favorito" />
-                    <img class="action-download" src="./assets/icon-download.svg" alt="descargar" />
-                    <img class="action-maximize" src="./assets/icon-max-normal.svg" alt="maximizar" />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <img id="move-right" src="" alt="imagen derecha galleria gifos" />
-          </div>
+          <div class="gallery-container"></div>
         </section>
       </main>
       <footer>
@@ -95,6 +60,6 @@
       </footer>
     </div>
     <!-- Scripts -->
-    <script src="./scripts/app.js"></script>
+    <script type="module" src="./scripts/app.js"></script>
   </body>
 </html>

@@ -90,7 +90,7 @@ header nav ul li {
   padding-top: 17px;
 }
 
-header nav ul li a {
+header nav ul li .menu-item {
   width: 100vw;
   text-decoration: none;
   text-transform: capitalize;
@@ -100,7 +100,7 @@ header nav ul li a {
   font-weight: 700;
 }
 
-header nav ul li a span {
+header nav ul li .menu-item span {
   text-transform: uppercase;
 }
 
@@ -144,20 +144,23 @@ header .night-nav {
     padding-top: unset;
     width: 76vw;
   }
-  header nav ul li a {
+  header nav ul li .menu-item {
     color: #572ee5;
     font-size: 13px;
     text-transform: uppercase;
   }
-  header nav ul li a:hover {
+  header nav ul li .menu-item:hover {
     text-decoration: underline;
     -webkit-text-decoration-color: #5ed7c6;
             text-decoration-color: #5ed7c6;
     text-decoration-thickness: 2px;
   }
-  header nav ul li a:active {
+  header nav ul li .menu-item:active {
     color: #9cafc3;
     text-decoration: none;
+  }
+  header nav ul li .night-menu-item {
+    color: #fff;
   }
   header nav ul li .menu-separator {
     display: none;
@@ -170,6 +173,16 @@ header .night-nav {
   }
   header nav ul .plus-menu-item:active {
     content: url("../assets/CTA-crear-gifo-active.svg");
+  }
+  header nav ul .night-plus-menu-item {
+    display: block;
+    content: url("../assets/CTA-crear-gifo-modo-noc.svg");
+  }
+  header nav ul .night-plus-menu-item:hover {
+    content: url("../assets/CTA-crear-gifo-hover-modo-noc.svg");
+  }
+  header nav ul .night-plus-menu-item:active {
+    content: url("../assets/CTA-crear-gifo-active-modo-noc.svg");
   }
 }
 
@@ -218,17 +231,30 @@ main .gifos .search-gifo-section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border: 1px solid #572ee5;
+  background-color: #fff;
+  border-radius: 27px;
+  width: 89.1%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding-bottom: 18px;
+}
+
+main .gifos .search-gifo-section .search-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
   height: 4.2%;
   width: 89.1%;
-  border: 1px solid #572ee5;
-  background-color: #fff;
-  border-radius: 27px;
 }
 
-main .gifos .search-gifo-section #search-gifos {
+main .gifos .search-gifo-section .search-bar #search-gifos {
   width: 57.3%;
   height: 1.8%;
   font-family: "Roboto", sans-serif;
@@ -239,10 +265,10 @@ main .gifos .search-gifo-section #search-gifos {
   line-height: 19px;
   border-style: hidden;
   outline: none;
-  margin: 1.2vh 0 1.1vh 14.7vw;
+  margin: 1.2vh 0 1.1vh 0;
 }
 
-main .gifos .search-gifo-section #search-gifos::-webkit-input-placeholder {
+main .gifos .search-gifo-section .search-bar #search-gifos::-webkit-input-placeholder {
   font-family: "Roboto", sans-serif;
   color: #6b7989;
   font-size: 1rem;
@@ -251,7 +277,7 @@ main .gifos .search-gifo-section #search-gifos::-webkit-input-placeholder {
   line-height: 19px;
 }
 
-main .gifos .search-gifo-section #search-gifos:-ms-input-placeholder {
+main .gifos .search-gifo-section .search-bar #search-gifos:-ms-input-placeholder {
   font-family: "Roboto", sans-serif;
   color: #6b7989;
   font-size: 1rem;
@@ -260,7 +286,7 @@ main .gifos .search-gifo-section #search-gifos:-ms-input-placeholder {
   line-height: 19px;
 }
 
-main .gifos .search-gifo-section #search-gifos::-ms-input-placeholder {
+main .gifos .search-gifo-section .search-bar #search-gifos::-ms-input-placeholder {
   font-family: "Roboto", sans-serif;
   color: #6b7989;
   font-size: 1rem;
@@ -269,7 +295,7 @@ main .gifos .search-gifo-section #search-gifos::-ms-input-placeholder {
   line-height: 19px;
 }
 
-main .gifos .search-gifo-section #search-gifos::placeholder {
+main .gifos .search-gifo-section .search-bar #search-gifos::placeholder {
   font-family: "Roboto", sans-serif;
   color: #6b7989;
   font-size: 1rem;
@@ -278,12 +304,63 @@ main .gifos .search-gifo-section #search-gifos::placeholder {
   line-height: 19px;
 }
 
-main .gifos .search-gifo-section img {
+main .gifos .search-gifo-section .search-bar #search-icon {
   margin-right: 5.3%;
 }
 
-main .gifos .search-gifo-section img:hover {
+main .gifos .search-gifo-section .search-bar #search-icon:hover {
   cursor: pointer;
+}
+
+main .gifos .search-gifo-section .typo-search-icon {
+  opacity: 0;
+}
+
+main .gifos .search-gifo-section #sugestion-section {
+  display: none;
+}
+
+main .gifos .search-gifo-section #sugestion-section .gif-sugestion {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  display: flex;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  align-items: center;
+  width: 89.1vw;
+}
+
+main .gifos .search-gifo-section #sugestion-section .gif-sugestion .sugestion-separator {
+  border: 1px solid #9cafc3;
+  margin: 12px 0 14px 15px;
+  opacity: 0.5;
+  width: 75vw;
+}
+
+main .gifos .search-gifo-section #sugestion-section .gif-sugestion img {
+  width: 20px;
+  height: 38px;
+  margin-left: 15px;
+}
+
+main .gifos .search-gifo-section #sugestion-section .gif-sugestion .sugestion {
+  cursor: pointer;
+  font-family: "Roboto", sans-serif;
+  color: #9cafc3;
+  font-size: 1rem;
+  font-weight: 400;
+  width: 60vw;
+  margin-left: 25px;
 }
 
 main .gifos .night-search-gifo-section {
@@ -295,11 +372,11 @@ main .gifos .night-search-gifo-section #search-gifos {
   background-color: #37383c;
 }
 
-main .gifos .night-search-gifo-section img {
+main .gifos .night-search-gifo-section #search-icon {
   content: url("/assets/icon-search-modo-noct.svg");
 }
 
-main .gifos .night-search-gifo-section img:hover {
+main .gifos .night-search-gifo-section #search-icon:hover {
   cursor: pointer;
 }
 
@@ -350,8 +427,96 @@ main .gifos .night-trending p {
   color: #fff;
 }
 
+main .gifos .hide-treding {
+  display: none;
+}
+
+main .gifos #gifos-grid {
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 90vw;
+  margin-bottom: 20px;
+}
+
+main .gifos #gifos-grid .gifos-separator {
+  margin-top: 35px;
+  border: 1px solid #9cafc3;
+  width: 121px;
+}
+
+main .gifos #gifos-grid h2 {
+  font-family: "Montserrat", sans-serif;
+  color: #572ee5;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 40px;
+  margin-top: 43px;
+  width: 100vw;
+  margin-bottom: 38px;
+  text-transform: capitalize;
+}
+
+main .gifos #gifos-grid img {
+  height: 120px;
+  width: 156px;
+}
+
+main .gifos #gifos-grid .message {
+  font-family: "Montserrat", sans-serif;
+  color: #5ed7c6;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-top: 29px;
+  line-height: 25px;
+}
+
+main .gifos #gifos-see-more {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+}
+
+main .gifos #gifos-see-more .box-see-more {
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 78px;
+}
+
+main .gifos #gifos-see-more .box-see-more .see-more {
+  border: 1px solid #572ee5;
+  border-radius: 25px;
+  height: 50px;
+  font-family: "Montserrat", sans-serif;
+  color: #572ee5;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 16px;
+  width: 127px;
+  padding-top: 18.5px;
+}
+
 main .community-gifos {
   margin-top: 45px;
+  padding-bottom: 82px;
   background-color: #f3f5f8;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -396,6 +561,7 @@ main .community-gifos .gallery-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  overflow: scroll;
 }
 
 main .community-gifos .gallery-container #move-left {
@@ -403,11 +569,12 @@ main .community-gifos .gallery-container #move-left {
   height: 40px;
   width: 40px;
   content: url("/assets/button-slider-left.svg");
+  border: 1px solid blue;
 }
 
 main .community-gifos .gallery-container .gallery-gif {
   margin-top: 32px;
-  padding-left: 5.9vw;
+  padding: 0px 5.9vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -556,43 +723,24 @@ main .night-community-gifos .community-message span {
     margin-right: 1vh;
   }
   main .community-gifos .gallery-container {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
     position: relative;
   }
+  main .community-gifos .gallery-container .gallery-gif .img-group .gif {
+    height: 275px;
+    width: 357px;
+  }
+  main .community-gifos .gallery-container .gallery-gif .img-group .img-cover {
+    height: 275px;
+    width: 357px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
   main .community-gifos .gallery-container #move-left {
-    display: unset;
-    height: 30px;
-    left: 30px;
-    position: absolute;
-    top: 100px;
-    width: 30px;
-  }
-  main .community-gifos .gallery-container #move-left:hover {
-    content: url("/assets/Button-Slider-left-hover.svg");
-  }
-  main .community-gifos .gallery-container .gallery-gif {
-    margin: 53px px 0 5px;
-    padding: 0;
-  }
-  main .community-gifos .gallery-container .gallery-gif img {
-    height: 180px;
-    width: 200px;
+    display: block;
   }
   main .community-gifos .gallery-container #move-right {
-    display: unset;
-    height: 30px;
-    position: absolute;
-    right: 15px;
-    top: 100px;
-    width: 30px;
-  }
-  main .community-gifos .gallery-container #move-right:hover {
-    content: url("/assets/Button-Slider-right-hover.svg");
+    display: block;
   }
 }
 

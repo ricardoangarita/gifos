@@ -38,7 +38,7 @@ header {
         cursor: pointer;
         list-style: none;
         padding-top: 17px;
-        a {
+        .menu-item {
           width: 100vw;
           text-decoration: none;
           text-transform: capitalize;
@@ -86,7 +86,7 @@ header {
         padding-top: unset;
         width: 76vw;
         li {
-          a {
+          .menu-item {
             color: $first-color;
             font-size: 13px;
             text-transform: uppercase;
@@ -100,6 +100,9 @@ header {
               text-decoration: none;
             }
           }
+          .night-menu-item {
+            color: $second-color;
+          }
           .menu-separator {
             display: none;
           }
@@ -111,6 +114,16 @@ header {
           }
           &:active {
             content: url('../assets/CTA-crear-gifo-active.svg');
+          }
+        }
+        .night-plus-menu-item {
+          display: block;
+          content: url('../assets/CTA-crear-gifo-modo-noc.svg');
+          &:hover {
+            content: url('../assets/CTA-crear-gifo-hover-modo-noc.svg');
+          }
+          &:active {
+            content: url('../assets/CTA-crear-gifo-active-modo-noc.svg');
           }
         }
       }

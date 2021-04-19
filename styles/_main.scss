@@ -25,31 +25,71 @@ main {
     }
     .search-gifo-section {
       display: flex;
-      justify-content: space-between;
-      height: 4.2%;
-      width: 89.1%;
+      justify-content: center;
       border: 1px solid $first-color;
       background-color: $second-color;
       border-radius: 27px;
-      #search-gifos {
-        width: 57.3%;
-        height: 1.8%;
-        @include gifos-font($second-font, $fourth-color, 1rem, 400);
-        text-align: left;
-        line-height: 19px;
-        border-style: hidden;
-        outline: none;
-        margin: 1.2vh 0 1.1vh 14.7vw;
-        &::placeholder {
-          @include gifos-font($second-font, $fifth-color, 1rem, 400);
+      width: 89.1%;
+      flex-wrap: wrap;
+      padding-bottom: 18px;
+      .search-bar {
+        display: flex;
+        justify-content: space-between;
+        height: 4.2%;
+        width: 89.1%;
+        #search-gifos {
+          width: 57.3%;
+          height: 1.8%;
+          @include gifos-font($second-font, $fourth-color, 1rem, 400);
           text-align: left;
           line-height: 19px;
+          border-style: hidden;
+          outline: none;
+          margin: 1.2vh 0 1.1vh 0;
+          &::placeholder {
+            @include gifos-font($second-font, $fifth-color, 1rem, 400);
+            text-align: left;
+            line-height: 19px;
+          }
+        }
+        #search-icon {
+          margin-right: 5.3%;
+          &:hover {
+            cursor: pointer;
+          }
         }
       }
-      img {
-        margin-right: 5.3%;
-        &:hover {
-          cursor: pointer;
+      .typo-search-icon {
+        opacity: 0;
+      }
+      #sugestion-section {
+        display: none;
+        .gif-sugestion {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-wrap: wrap;
+          .sugestion-separator {
+            border: 1px solid $active-color;
+            margin: 12px 0 14px 15px;
+            opacity: 0.5;
+            width: 75vw;
+          }
+          display: flex;
+          justify-content: left;
+          align-items: center;
+          width: 89.1vw;
+          img {
+            width: 20px;
+            height: 38px;
+            margin-left: 15px;
+          }
+          .sugestion {
+            cursor: pointer;
+            @include gifos-font($second-font, $active-color, 1rem, 400);
+            width: 60vw;
+            margin-left: 25px;
+          }
         }
       }
     }
@@ -59,7 +99,7 @@ main {
       #search-gifos {
         background-color: $seventh-color;
       }
-      img {
+      #search-icon {
         content: url('/assets/icon-search-modo-noct.svg');
         &:hover {
           cursor: pointer;
@@ -97,9 +137,64 @@ main {
         color: $second-color;
       }
     }
+    .hide-treding {
+      display: none;
+    }
+    #gifos-grid {
+      text-align: center;
+      display: flex;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+      width: 90vw;
+      margin-bottom: 20px;
+      .gifos-separator {
+        margin-top: 35px;
+        border: 1px solid $active-color;
+        width: 121px;
+      }
+      h2 {
+        @include gifos-font($first-font, $first-color, 25px, 700);
+        line-height: 40px;
+        margin-top: 43px;
+        width: 100vw;
+        margin-bottom: 38px;
+        text-transform: capitalize;
+      }
+      img {
+        height: 120px;
+        width: 156px;
+      }
+      .message {
+        @include gifos-font($first-font, $third-color, 1rem, 700);
+        margin-top: 29px;
+        line-height: 25px;
+      }
+    }
+    #gifos-see-more {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      .box-see-more {
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 78px;
+        .see-more {
+          border: 1px solid $first-color;
+          border-radius: 25px;
+          height: 50px;
+          @include gifos-font($first-font, $first-color, 13px, 700);
+          line-height: 16px;
+          width: 127px;
+          padding-top: 18.5px;
+        }
+      }
+    }
   }
   .community-gifos {
     margin-top: 45px;
+    padding-bottom: 82px;
     background-color: $sixth-color;
     display: flex;
     flex-direction: column;
@@ -121,15 +216,18 @@ main {
     }
     .gallery-container {
       display: flex;
+      overflow: scroll;
+
       #move-left {
         display: none;
         height: 40px;
         width: 40px;
         content: url('/assets/button-slider-left.svg');
+        border: 1px solid blue;
       }
       .gallery-gif {
         margin-top: 32px;
-        padding-left: 5.9vw;
+        padding: 0px 5.9vw;
         display: flex;
         justify-content: space-evenly;
         .img-group {
@@ -261,38 +359,33 @@ main {
         }
       }
       .gallery-container {
-        justify-content: center;
-        align-items: center;
         position: relative;
-        #move-left {
-          display: unset;
-          height: 30px;
-          left: 30px;
-          position: absolute;
-          top: 100px;
-          width: 30px;
-          &:hover {
-            content: url('/assets/Button-Slider-left-hover.svg');
+        .gallery-gif {
+          .img-group {
+            .gif {
+              height: 275px;
+              width: 357px;
+            }
+            .img-cover {
+              height: 275px;
+              width: 357px;
+            }
           }
         }
-        .gallery-gif {
-          margin: 53px px 0 5px;
-          padding: 0;
-          img {
-            height: 180px;
-            width: 200px;
-          }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $laptop) {
+  main {
+    .community-gifos {
+      .gallery-container {
+        #move-left {
+          display: block;
         }
         #move-right {
-          display: unset;
-          height: 30px;
-          position: absolute;
-          right: 15px;
-          top: 100px;
-          width: 30px;
-          &:hover {
-            content: url('/assets/Button-Slider-right-hover.svg');
-          }
+          display: block;
         }
       }
     }
