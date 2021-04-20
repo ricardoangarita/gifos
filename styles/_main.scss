@@ -112,7 +112,7 @@ main {
         background-color: $seventh-color;
       }
       #search-icon {
-        content: url("/assets/icon-search-modo-noct.svg");
+        content: url('/assets/icon-search-modo-noct.svg');
         &:hover {
           cursor: pointer;
         }
@@ -173,8 +173,9 @@ main {
         text-transform: capitalize;
       }
       img {
-        height: 120px;
-        width: 156px;
+        height: 40vw;
+        width: 40vw;
+        margin-bottom: 5%;
       }
       .message {
         @include gifos-font($first-font, $third-color, 1rem, 700);
@@ -234,7 +235,7 @@ main {
         display: none;
         height: 40px;
         width: 40px;
-        content: url("/assets/button-slider-left.svg");
+        content: url('/assets/button-slider-left.svg');
         border: 1px solid blue;
       }
       .gallery-gif {
@@ -276,20 +277,20 @@ main {
               }
               .action-favorite {
                 &:hover {
-                  content: url("../assets/icon-fav-hover.svg");
+                  content: url('../assets/icon-fav-hover.svg');
                 }
                 &:active {
-                  content: url("../assets/icon-fav-active.svg");
+                  content: url('../assets/icon-fav-active.svg');
                 }
               }
               .action-download {
                 &:hover {
-                  content: url("../assets/icon-download-hover.svg");
+                  content: url('../assets/icon-download-hover.svg');
                 }
               }
               .action-maximize {
                 &:hover {
-                  content: url("../assets/icon-max-hover.svg");
+                  content: url('../assets/icon-max-hover.svg');
                 }
               }
             }
@@ -300,7 +301,7 @@ main {
         display: none;
         height: 40px;
         width: 40px;
-        content: url("/assets/button-slider-right.svg");
+        content: url('/assets/button-slider-right.svg');
       }
     }
   }

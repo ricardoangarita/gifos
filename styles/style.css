@@ -485,8 +485,9 @@ main .gifos #gifos-grid h2 {
 }
 
 main .gifos #gifos-grid img {
-  height: 120px;
-  width: 156px;
+  height: 40vw;
+  width: 40vw;
+  margin-bottom: 5%;
 }
 
 main .gifos #gifos-grid .message {
