@@ -264,7 +264,7 @@ main .gifos .search-gifo-section .search-bar #search-gifos {
   line-height: 19px;
   border-style: hidden;
   outline: none;
-  margin: 1.2vh 0 1.1vh 0;
+  margin: 1.2vh 0 1.1vh -5vw;
 }
 
 main .gifos .search-gifo-section .search-bar #search-gifos::-webkit-input-placeholder {
@@ -313,13 +313,18 @@ main .gifos .search-gifo-section .search-bar #search-icon:hover {
 
 main .gifos .search-gifo-section .typo-search-icon {
   opacity: 0;
+  margin-left: 5vw;
 }
 
-main .gifos .search-gifo-section #sugestion-section {
+main .gifos .search-gifo-section .show-typo-search-icon {
+  opacity: 1;
+}
+
+main .gifos .search-gifo-section .sugestion-section {
   display: none;
 }
 
-main .gifos .search-gifo-section #sugestion-section .gif-sugestion {
+main .gifos .search-gifo-section .sugestion-section .gif-sugestion {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -339,27 +344,44 @@ main .gifos .search-gifo-section #sugestion-section .gif-sugestion {
   width: 89.1vw;
 }
 
-main .gifos .search-gifo-section #sugestion-section .gif-sugestion .sugestion-separator {
+main .gifos .search-gifo-section .sugestion-section .gif-sugestion .sugestion-separator {
   border: 1px solid #9cafc3;
-  margin: 12px 0 14px 15px;
+  margin: 12px 0 14px 10vw;
   opacity: 0.5;
   width: 75vw;
 }
 
-main .gifos .search-gifo-section #sugestion-section .gif-sugestion img {
-  width: 20px;
-  height: 38px;
-  margin-left: 15px;
+main .gifos .search-gifo-section .sugestion-section .gif-sugestion .sugestion-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-main .gifos .search-gifo-section #sugestion-section .gif-sugestion .sugestion {
+main .gifos .search-gifo-section .sugestion-section .gif-sugestion .sugestion-block .search-icon-sugestion {
+  width: 20px;
+  height: 38px;
+  margin-left: 10vw;
+}
+
+main .gifos .search-gifo-section .sugestion-section .gif-sugestion .sugestion-block .sugestion {
   cursor: pointer;
   font-family: "Roboto", sans-serif;
   color: #9cafc3;
   font-size: 1rem;
   font-weight: 400;
-  width: 60vw;
-  margin-left: 25px;
+  width: 80vw;
+  margin-left: 5vw;
+}
+
+main .gifos .search-gifo-section .show-sugestion-section {
+  display: block;
+  padding-bottom: 18px;
 }
 
 main .gifos .night-search-gifo-section {
