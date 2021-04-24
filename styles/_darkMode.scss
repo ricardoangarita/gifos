@@ -1,0 +1,104 @@
+.dark-mode {
+  .container {
+    @extend %night-border;
+    background-color: $seventh-color;
+    header {
+      nav {
+        .cover-menu {
+          background-color: $fourth-color;
+        }
+        #logo {
+          content: url("/assets/logo-mobile-modo-noct.svg");
+        }
+        #burguer-menu {
+          content: url("/assets/burger-modo-noct.svg");
+        }
+        .menu-item {
+          color: $second-color;
+        }
+        .plus-menu-item {
+          content: url("../assets/CTA-crear-gifo-modo-noc.svg");
+          &:hover {
+            content: url("../assets/CTA-crear-gifo-hover-modo-noc.svg");
+          }
+          &:active {
+            content: url("../assets/CTA-crear-gifo-active-modo-noc.svg");
+          }
+        }
+      }
+      background-color: $seventh-color;
+    }
+    main {
+      .gifos {
+        .message {
+          color: $second-color;
+        }
+        .search-gifo-section {
+          border: 1px solid $second-color;
+          background-color: $seventh-color;
+          #search-gifos {
+            background-color: $seventh-color;
+            color: $second-color;
+          }
+          #search-icon {
+            content: url("/assets/icon-search-modo-noct.svg");
+            &:hover {
+              cursor: pointer;
+            }
+          }
+        }
+        .trending {
+          span {
+            color: $second-color;
+          }
+          p {
+            color: $second-color;
+          }
+        }
+        #gifos-grid {
+          h2 {
+            color: $second-color;
+          }
+        }
+        #gifos-see-more {
+          .box-see-more {
+            .see-more {
+              border: 1px solid $second-color;
+              color: $second-color;
+            }
+          }
+        }
+      }
+      .community-gifos {
+        background-color: $eighth-color;
+        h2 {
+          color: $second-color;
+        }
+        .community-message {
+          span {
+            color: $second-color;
+          }
+        }
+      }
+    }
+    footer {
+      .social-media-section {
+        span {
+          color: $second-color;
+        }
+        #facebook {
+          content: url("/assets/icon_facebook_noc.svg");
+        }
+        #twitter {
+          content: url("/assets/icon_twitter_noc.svg");
+        }
+        #instagram {
+          content: url("/assets/icon_instagram_noc.svg");
+        }
+        .copyright {
+          color: $second-color;
+        }
+      }
+    }
+  }
+}

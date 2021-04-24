@@ -15,9 +15,6 @@ main {
         color: $third-color;
       }
     }
-    .night-message {
-      color: $second-color;
-    }
     .main-image {
       margin-top: 31px;
       width: 72.8%;
@@ -105,19 +102,6 @@ main {
         padding-bottom: 18px;
       }
     }
-    .night-search-gifo-section {
-      border: 1px solid $second-color;
-      background-color: $seventh-color;
-      #search-gifos {
-        background-color: $seventh-color;
-      }
-      #search-icon {
-        content: url('/assets/icon-search-modo-noct.svg');
-        &:hover {
-          cursor: pointer;
-        }
-      }
-    }
     .trending {
       margin-top: 31px;
       display: flex;
@@ -139,14 +123,6 @@ main {
         line-height: 25px;
         text-transform: capitalize;
         text-align: center;
-      }
-    }
-    .night-trending {
-      span {
-        color: $second-color;
-      }
-      p {
-        color: $second-color;
       }
     }
     .hide-treding {
@@ -235,7 +211,7 @@ main {
         display: none;
         height: 40px;
         width: 40px;
-        content: url('/assets/button-slider-left.svg');
+        content: url("/assets/button-slider-left.svg");
         border: 1px solid blue;
       }
       .gallery-gif {
@@ -277,20 +253,20 @@ main {
               }
               .action-favorite {
                 &:hover {
-                  content: url('../assets/icon-fav-hover.svg');
+                  content: url("../assets/icon-fav-hover.svg");
                 }
                 &:active {
-                  content: url('../assets/icon-fav-active.svg');
+                  content: url("../assets/icon-fav-active.svg");
                 }
               }
               .action-download {
                 &:hover {
-                  content: url('../assets/icon-download-hover.svg');
+                  content: url("../assets/icon-download-hover.svg");
                 }
               }
               .action-maximize {
                 &:hover {
-                  content: url('../assets/icon-max-hover.svg');
+                  content: url("../assets/icon-max-hover.svg");
                 }
               }
             }
@@ -301,18 +277,7 @@ main {
         display: none;
         height: 40px;
         width: 40px;
-        content: url('/assets/button-slider-right.svg');
-      }
-    }
-  }
-  .night-community-gifos {
-    background-color: $eighth-color;
-    h2 {
-      color: $second-color;
-    }
-    .community-message {
-      span {
-        color: $second-color;
+        content: url("/assets/button-slider-right.svg");
       }
     }
   }

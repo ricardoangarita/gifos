@@ -11,17 +11,12 @@ header {
       position: absolute;
       top: 95px;
     }
-    .night-cover-menu {
-      background-color: $fourth-color;
-    }
     .display-cover-menu {
       display: block;
     }
     #logo {
+      content: url("/assets/logo-mobile.svg");
       padding: 5vw 0 2.9vw 5.9vw;
-    }
-    .night-logo {
-      content: url('/assets/logo-mobile-modo-noct.svg');
     }
     #burguer-menu {
       cursor: pointer;
@@ -60,9 +55,6 @@ header {
       }
     }
   }
-  .night-nav {
-    background-color: $seventh-color;
-  }
 }
 
 @media screen and (min-width: $tablet) {
@@ -100,9 +92,6 @@ header {
               text-decoration: none;
             }
           }
-          .night-menu-item {
-            color: $second-color;
-          }
           .menu-separator {
             display: none;
           }
@@ -110,20 +99,10 @@ header {
         .plus-menu-item {
           display: block;
           &:hover {
-            content: url('../assets/CTA-crear-gifo-hover.svg');
+            content: url("../assets/CTA-crear-gifo-hover.svg");
           }
           &:active {
-            content: url('../assets/CTA-crear-gifo-active.svg');
-          }
-        }
-        .night-plus-menu-item {
-          display: block;
-          content: url('../assets/CTA-crear-gifo-modo-noc.svg');
-          &:hover {
-            content: url('../assets/CTA-crear-gifo-hover-modo-noc.svg');
-          }
-          &:active {
-            content: url('../assets/CTA-crear-gifo-active-modo-noc.svg');
+            content: url("../assets/CTA-crear-gifo-active.svg");
           }
         }
       }

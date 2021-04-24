@@ -11,16 +11,12 @@
   overflow: hidden;
 }
 
-.night-container {
-  background-color: #37383c;
-}
-
 .container {
   border-top: 5px solid #572ee5;
   border-bottom: 5px solid #572ee5;
 }
 
-.night-container {
+.dark-mode .container {
   border-top: 5px solid #000;
   border-bottom: 5px solid #000;
 }
@@ -45,20 +41,13 @@ header nav .cover-menu {
   top: 95px;
 }
 
-header nav .night-cover-menu {
-  background-color: #000;
-}
-
 header nav .display-cover-menu {
   display: block;
 }
 
 header nav #logo {
+  content: url("/assets/logo-mobile.svg");
   padding: 5vw 0 2.9vw 5.9vw;
-}
-
-header nav .night-logo {
-  content: url("/assets/logo-mobile-modo-noct.svg");
 }
 
 header nav #burguer-menu {
@@ -116,10 +105,6 @@ header nav ul .plus-menu-item {
   display: none;
 }
 
-header .night-nav {
-  background-color: #37383c;
-}
-
 @media screen and (min-width: 768px) {
   header nav .cover-menu {
     display: block;
@@ -159,9 +144,6 @@ header .night-nav {
     color: #9cafc3;
     text-decoration: none;
   }
-  header nav ul li .night-menu-item {
-    color: #fff;
-  }
   header nav ul li .menu-separator {
     display: none;
   }
@@ -173,16 +155,6 @@ header .night-nav {
   }
   header nav ul .plus-menu-item:active {
     content: url("../assets/CTA-crear-gifo-active.svg");
-  }
-  header nav ul .night-plus-menu-item {
-    display: block;
-    content: url("../assets/CTA-crear-gifo-modo-noc.svg");
-  }
-  header nav ul .night-plus-menu-item:hover {
-    content: url("../assets/CTA-crear-gifo-hover-modo-noc.svg");
-  }
-  header nav ul .night-plus-menu-item:active {
-    content: url("../assets/CTA-crear-gifo-active-modo-noc.svg");
   }
 }
 
@@ -215,10 +187,6 @@ main .gifos .message {
 main .gifos .message span {
   text-transform: uppercase;
   color: #5ed7c6;
-}
-
-main .gifos .night-message {
-  color: #fff;
 }
 
 main .gifos .main-image {
@@ -384,23 +352,6 @@ main .gifos .search-gifo-section .show-sugestion-section {
   padding-bottom: 18px;
 }
 
-main .gifos .night-search-gifo-section {
-  border: 1px solid #fff;
-  background-color: #37383c;
-}
-
-main .gifos .night-search-gifo-section #search-gifos {
-  background-color: #37383c;
-}
-
-main .gifos .night-search-gifo-section #search-icon {
-  content: url("/assets/icon-search-modo-noct.svg");
-}
-
-main .gifos .night-search-gifo-section #search-icon:hover {
-  cursor: pointer;
-}
-
 main .gifos .trending {
   margin-top: 31px;
   display: -webkit-box;
@@ -438,14 +389,6 @@ main .gifos .trending p {
   line-height: 25px;
   text-transform: capitalize;
   text-align: center;
-}
-
-main .gifos .night-trending span {
-  color: #fff;
-}
-
-main .gifos .night-trending p {
-  color: #fff;
 }
 
 main .gifos .hide-treding {
@@ -672,18 +615,6 @@ main .community-gifos .gallery-container #move-right {
   height: 40px;
   width: 40px;
   content: url("/assets/button-slider-right.svg");
-}
-
-main .night-community-gifos {
-  background-color: #222326;
-}
-
-main .night-community-gifos h2 {
-  color: #fff;
-}
-
-main .night-community-gifos .community-message span {
-  color: #fff;
 }
 
 @media screen and (min-width: 768px) {
@@ -940,26 +871,6 @@ footer .social-media-section .copyright {
   margin-bottom: 23px;
 }
 
-footer .night-social-media-section span {
-  color: #fff;
-}
-
-footer .night-social-media-section #facebook {
-  content: url("/assets/icon_facebook_noc.svg");
-}
-
-footer .night-social-media-section #twitter {
-  content: url("/assets/icon_twitter_noc.svg");
-}
-
-footer .night-social-media-section #instagram {
-  content: url("/assets/icon_instagram_noc.svg");
-}
-
-footer .night-social-media-section .copyright {
-  color: #fff;
-}
-
 @media screen and (min-width: 768px) {
   footer .social-media-section {
     -webkit-box-orient: horizontal;
@@ -978,5 +889,112 @@ footer .night-social-media-section .copyright {
     margin: 0;
     padding-top: 44px;
   }
+}
+
+.dark-mode .container {
+  background-color: #37383c;
+}
+
+.dark-mode .container header {
+  background-color: #37383c;
+}
+
+.dark-mode .container header nav .cover-menu {
+  background-color: #000;
+}
+
+.dark-mode .container header nav #logo {
+  content: url("/assets/logo-mobile-modo-noct.svg");
+}
+
+.dark-mode .container header nav #burguer-menu {
+  content: url("/assets/burger-modo-noct.svg");
+}
+
+.dark-mode .container header nav .menu-item {
+  color: #fff;
+}
+
+.dark-mode .container header nav .plus-menu-item {
+  content: url("../assets/CTA-crear-gifo-modo-noc.svg");
+}
+
+.dark-mode .container header nav .plus-menu-item:hover {
+  content: url("../assets/CTA-crear-gifo-hover-modo-noc.svg");
+}
+
+.dark-mode .container header nav .plus-menu-item:active {
+  content: url("../assets/CTA-crear-gifo-active-modo-noc.svg");
+}
+
+.dark-mode .container main .gifos .message {
+  color: #fff;
+}
+
+.dark-mode .container main .gifos .search-gifo-section {
+  border: 1px solid #fff;
+  background-color: #37383c;
+}
+
+.dark-mode .container main .gifos .search-gifo-section #search-gifos {
+  background-color: #37383c;
+  color: #fff;
+}
+
+.dark-mode .container main .gifos .search-gifo-section #search-icon {
+  content: url("/assets/icon-search-modo-noct.svg");
+}
+
+.dark-mode .container main .gifos .search-gifo-section #search-icon:hover {
+  cursor: pointer;
+}
+
+.dark-mode .container main .gifos .trending span {
+  color: #fff;
+}
+
+.dark-mode .container main .gifos .trending p {
+  color: #fff;
+}
+
+.dark-mode .container main .gifos #gifos-grid h2 {
+  color: #fff;
+}
+
+.dark-mode .container main .gifos #gifos-see-more .box-see-more .see-more {
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+.dark-mode .container main .community-gifos {
+  background-color: #222326;
+}
+
+.dark-mode .container main .community-gifos h2 {
+  color: #fff;
+}
+
+.dark-mode .container main .community-gifos .community-message span {
+  color: #fff;
+}
+
+.dark-mode .container footer .social-media-section span {
+  color: #fff;
+}
+
+.dark-mode .container footer .social-media-section #facebook {
+  content: url("/assets/icon_facebook_noc.svg");
+}
+
+.dark-mode .container footer .social-media-section #twitter {
+  content: url("/assets/icon_twitter_noc.svg");
+}
+
+.dark-mode .container footer .social-media-section #instagram {
+  content: url("/assets/icon_instagram_noc.svg");
+}
+
+.dark-mode .container footer .social-media-section .copyright {
+  color: #fff;
 }
 /*# sourceMappingURL=style.css.map */
