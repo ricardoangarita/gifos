@@ -48,16 +48,21 @@ main {
             line-height: 19px;
           }
         }
-        #search-icon {
+        .search-icon {
           margin-right: 5.3%;
+          content: url('/assets/icon-search.svg');
           &:hover {
             cursor: pointer;
           }
+        }
+        .close-search-icon {
+          content: url('/assets/close.svg');
         }
       }
       .typo-search-icon {
         opacity: 0;
         margin-left: 5vw;
+        content: url('/assets/icon-search-type.svg');
       }
       .show-typo-search-icon {
         opacity: 1;
@@ -115,14 +120,21 @@ main {
         line-height: 25px;
         text-align: center;
       }
-      p {
+      .trending-search-term {
         margin-top: 2px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
         width: 225px;
-        height: 50px;
-        @include gifos-font($first-font, $first-color, 14px, 500);
-        line-height: 25px;
-        text-transform: capitalize;
-        text-align: center;
+        a {
+          @include gifos-font($first-font, $first-color, 14px, 500);
+          line-height: 25px;
+          text-transform: capitalize;
+          margin: 0 3px;
+          text-decoration: none;
+          cursor: pointer;
+        }
       }
     }
     .hide-treding {
@@ -134,7 +146,6 @@ main {
       justify-content: space-evenly;
       flex-wrap: wrap;
       width: 90vw;
-      margin-bottom: 20px;
       .gifos-separator {
         margin-top: 35px;
         border: 1px solid $active-color;
@@ -211,7 +222,7 @@ main {
         display: none;
         height: 40px;
         width: 40px;
-        content: url("/assets/button-slider-left.svg");
+        content: url('/assets/button-slider-left.svg');
         border: 1px solid blue;
       }
       .gallery-gif {
@@ -226,9 +237,9 @@ main {
             width: 243px;
             margin-left: 2vw;
             cursor: pointer;
-            &:hover + .img-cover {
-              display: block;
-            }
+            // &:hover + .img-cover {
+            //   display: block;
+            // }
           }
           .img-cover {
             height: 187px;
@@ -253,20 +264,20 @@ main {
               }
               .action-favorite {
                 &:hover {
-                  content: url("../assets/icon-fav-hover.svg");
+                  content: url('../assets/icon-fav-hover.svg');
                 }
                 &:active {
-                  content: url("../assets/icon-fav-active.svg");
+                  content: url('../assets/icon-fav-active.svg');
                 }
               }
               .action-download {
                 &:hover {
-                  content: url("../assets/icon-download-hover.svg");
+                  content: url('../assets/icon-download-hover.svg');
                 }
               }
               .action-maximize {
                 &:hover {
-                  content: url("../assets/icon-max-hover.svg");
+                  content: url('../assets/icon-max-hover.svg');
                 }
               }
             }
@@ -277,7 +288,7 @@ main {
         display: none;
         height: 40px;
         width: 40px;
-        content: url("/assets/button-slider-right.svg");
+        content: url('/assets/button-slider-right.svg');
       }
     }
   }

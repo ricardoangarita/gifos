@@ -15,12 +15,16 @@ header {
       display: block;
     }
     #logo {
-      content: url("/assets/logo-mobile.svg");
+      content: url('/assets/logo-mobile.svg');
       padding: 5vw 0 2.9vw 5.9vw;
     }
-    #burguer-menu {
+    .burguer-menu {
       cursor: pointer;
       padding: 8vw 7.2vw 5.8vw 0;
+      content: url('../assets/burger.svg');
+    }
+    .close-burguer-menu {
+      content: url('../assets/close.svg');
     }
     ul {
       display: flex;
@@ -99,10 +103,10 @@ header {
         .plus-menu-item {
           display: block;
           &:hover {
-            content: url("../assets/CTA-crear-gifo-hover.svg");
+            content: url('../assets/CTA-crear-gifo-hover.svg');
           }
           &:active {
-            content: url("../assets/CTA-crear-gifo-active.svg");
+            content: url('../assets/CTA-crear-gifo-active.svg');
           }
         }
       }

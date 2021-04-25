@@ -1,0 +1,76 @@
+.expanded-gifo-container {
+  border-top: 5px solid $first-color-opacity;
+  border-bottom: 5px solid $first-color-opacity;
+  height: 100vh;
+  padding: 5vw 5.9vw 2.9vw 5.9vw;
+  .header-section {
+    display: flex;
+    justify-content: space-between;
+    .expanded-logo {
+      content: url('/assets/logo-mobile.svg');
+      opacity: 0.2;
+    }
+    .expanded-close {
+      margin-top: 30px;
+      content: url('/assets/close.svg');
+      cursor: pointer;
+    }
+  }
+  .expanded-gifo-section {
+    display: flex;
+    justify-content: center;
+    margin-top: 78px;
+    .expanded-gifo {
+      width: 90vw;
+      height: 40vh;
+    }
+  }
+  .expanded-container-info-gifo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 14px;
+    .expanded-info-gifo-section {
+      display: flex;
+      justify-content: left;
+      align-items: center;
+      flex-wrap: wrap;
+      width: 40vw;
+      .user {
+        width: 100%;
+        @include gifos-font($second-font, $fourth-color, 15px, 400);
+        line-height: 18px;
+        padding-bottom: 6px;
+        text-transform: capitalize;
+      }
+      .gifo-title {
+        width: 100%;
+        @include gifos-font($first-font, $fourth-color, 1rem, 700);
+        line-height: 19px;
+        text-transform: capitalize;
+      }
+    }
+    .expanded-action-section {
+      width: 25vw;
+      display: flex;
+      .expanded-action-favorite {
+        content: url('/assets/icon-fav.svg');
+        margin: auto;
+        cursor: pointer;
+        &:hover {
+          content: url('/assets/icon-fav-hover.svg');
+        }
+      }
+      .expanded-action-favorite-select {
+        content: url('/assets/icon-fav-active.svg');
+        &:hover {
+          content: url('/assets/icon-fav-active.svg');
+        }
+      }
+      .expanded-action-download {
+        content: url('/assets/icon-download.svg');
+        cursor: pointer;
+      }
+    }
+  }
+}

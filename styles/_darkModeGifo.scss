@@ -1,0 +1,24 @@
+.darkMode {
+  .expanded-gifo-container {
+    background-color: $seventh-color;
+    @extend %night-border;
+    .header-section {
+      .expanded-logo {
+        content: url('/assets/logo-mobile-modo-noct.svg');
+      }
+      .expanded-close {
+        content: url('/assets/close-modo-noct.svg');
+      }
+    }
+    .expanded-container-info-gifo {
+      .expanded-info-gifo-section {
+        .user {
+          color: $second-color;
+        }
+        .gifo-title {
+          color: $second-color;
+        }
+      }
+    }
+  }
+}
