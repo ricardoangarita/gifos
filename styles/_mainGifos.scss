@@ -14,6 +14,26 @@
       text-transform: capitalize;
     }
   }
+  .gifos-grid {
+    .empty-gifos-grid {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      img {
+        margin-top: 30px;
+        content: url("/assets/icon-mis-gifos-sin-contenido.svg");
+        height: 100px;
+        width: 100px;
+      }
+      span {
+        @include gifos-font($first-font, $fav-text-color, 1rem, 700);
+        line-height: 18px;
+        margin-top: 23px;
+        text-align: center;
+        width: 70vw;
+      }
+    }
+  }
   .more-gifos {
     align-items: center;
     display: flex;

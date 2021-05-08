@@ -1,5 +1,6 @@
 .favorite {
-  padding: 0 5.9vw;
+  padding-left: 6vw;
+  padding-right: 6vw;
   .favorite-container {
     display: flex;
     flex-direction: column;
@@ -16,40 +17,152 @@
     }
   }
   .favorite-list-section {
-    display: flex;
-    justify-content: center;
-    width: 90vw;
+    margin-top: 36px;
     .favorite-grid {
       display: flex;
-      justify-content: space-evenly;
-      align-items: center;
+      justify-content: space-around;
       flex-wrap: wrap;
-      margin-top: 46px;
+      .img-group {
+        img {
+          height: 40vw;
+          width: 40vw;
+          margin-bottom: 3%;
+        }
+        .img-cover {
+          display: none;
+        }
+      }
+    }
+    .more-favorite {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      margin-top: 78px;
+      span {
+        border: 2px solid $first-color;
+        border-radius: 25px;
+        @include gifos-font($first-font, $first-color, 13px, 700);
+        line-height: 1rem;
+        height: 50px;
+        padding: 17px 0;
+        text-align: center;
+        text-transform: uppercase;
+        vertical-align: middle;
+        width: 127px;
+      }
+    }
+    .empty-favorite-grid {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: 1px solid blue;
       img {
-        height: 40vw;
-        width: 40vw;
-        margin-bottom: 5%;
-        cursor: pointer;
+        margin-top: 30px;
+        content: url('/assets/icon-fav-sin-contenido.svg');
+        height: 100px;
+        width: 100px;
+      }
+      span {
+        @include gifos-font($first-font, $fav-text-color, 1rem, 700);
+        line-height: 18px;
+        margin-top: 23px;
+        text-align: center;
+        width: 70vw;
       }
     }
   }
+}
 
-  .more-favorite {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    margin-top: 78px;
-    span {
-      border: 2px solid $first-color;
-      border-radius: 25px;
-      @include gifos-font($first-font, $first-color, 13px, 700);
-      line-height: 1rem;
-      height: 50px;
-      padding: 17px 0;
-      text-align: center;
-      text-transform: uppercase;
-      vertical-align: middle;
-      width: 127px;
+@media screen and (min-width: $tablet) {
+  .favorite {
+    .favorite-list-section {
+      .favorite-grid {
+        .img-group {
+          position: relative;
+          img {
+            width: 28vw;
+            height: 28vw;
+            margin-bottom: 2%;
+            &:hover + .img-cover {
+              display: block;
+            }
+          }
+          .img-cover {
+            width: 28vw;
+            height: 28vw;
+            background: $first-color-opacity;
+            position: absolute;
+            top: 0;
+            display: none;
+            &:hover {
+              display: block;
+            }
+            .img-action-container {
+              display: flex;
+              justify-content: flex-end;
+              margin-right: 8px;
+              img {
+                margin-top: 10px;
+                width: 32px;
+                height: 32px;
+                margin-left: 8px;
+              }
+              .favorite-action {
+                content: url('/assets/icon-fav-active.svg');
+              }
+              .download-action {
+                content: url('/assets/icon-download.svg');
+                &:hover {
+                  content: url('/assets/icon-download-hover.svg');
+                }
+              }
+              .expand-action {
+                content: url('/assets/icon-max-normal.svg');
+                &:hover {
+                  content: url('/assets/icon-max-hover.svg');
+                }
+              }
+            }
+            .gifo-description {
+              display: flex;
+              flex-direction: column;
+              justify-content: flex-start;
+              text-align: start;
+              margin-top: 80px;
+              margin-left: 20px;
+              .gifo-user {
+                width: 90%;
+                @include gifos-font($second-font, $second-color, 15px, 400);
+              }
+              .gifo-title {
+                margin-top: 10px;
+                text-align: start;
+                padding-top: 0;
+                width: 90%;
+                @include gifos-font($second-font, $second-color, 15px, 700);
+                line-height: 1rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $laptop) {
+  .favorite {
+    .favorite-list-section {
+      .favorite-grid-container {
+        .favorite-grid {
+          img {
+            height: 20vw;
+            width: 20vw;
+            margin-bottom: 2%;
+            cursor: pointer;
+          }
+        }
+      }
     }
   }
 }

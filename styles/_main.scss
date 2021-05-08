@@ -2,6 +2,7 @@ main {
   .gifos {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     flex-wrap: nowrap;
     .message {
@@ -71,23 +72,21 @@ main {
         display: none;
         .gif-sugestion {
           display: flex;
-          justify-content: center;
           align-items: center;
           flex-wrap: wrap;
+          width: 89.1vw;
           .sugestion-separator {
             border: 1px solid $active-color;
             margin: 12px 0 14px 10vw;
             opacity: 0.5;
-            width: 75vw;
+            width: 70vw;
           }
-          display: flex;
-          justify-content: left;
-          align-items: center;
-          width: 89.1vw;
+
           .sugestion-block {
             display: flex;
             justify-content: left;
             align-items: center;
+            width: 100%;
             .search-icon-sugestion {
               width: 20px;
               height: 38px;
@@ -96,7 +95,7 @@ main {
             .sugestion {
               cursor: pointer;
               @include gifos-font($second-font, $active-color, 1rem, 400);
-              width: 80vw;
+              width: 80%;
               margin-left: 5vw;
             }
           }
@@ -159,11 +158,17 @@ main {
         margin-bottom: 38px;
         text-transform: capitalize;
       }
-      img {
-        height: 40vw;
-        width: 40vw;
-        margin-bottom: 5%;
+      .img-group {
+        img {
+          height: 40vw;
+          width: 40vw;
+          margin-bottom: 3%;
+        }
+        .img-cover {
+          display: none;
+        }
       }
+
       .message {
         @include gifos-font($first-font, $third-color, 1rem, 700);
         margin-top: 29px;
@@ -174,6 +179,7 @@ main {
       display: flex;
       justify-content: center;
       text-align: center;
+      cursor: pointer;
       .box-see-more {
         width: 100vw;
         display: flex;
@@ -216,79 +222,48 @@ main {
     }
     .gallery-container {
       display: flex;
-      overflow: scroll;
-
-      #move-left {
-        display: none;
-        height: 40px;
-        width: 40px;
-        content: url('/assets/button-slider-left.svg');
-        border: 1px solid blue;
+      justify-content: space-between;
+      align-items: center;
+      margin-left: 10px;
+      margin-top: 53px;
+      .move-left-container {
+        .move-left {
+          margin-right: 8px;
+          display: none;
+          height: 40px;
+          width: 40px;
+          content: url('/assets/button-slider-left.svg');
+        }
       }
-      .gallery-gif {
-        margin-top: 32px;
-        padding: 0px 5.9vw;
+      .trending-container {
         display: flex;
-        justify-content: space-evenly;
+        justify-content: flex-start;
+        box-sizing: content-box;
+        overflow-x: scroll;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        &::-webkit-scrollbar {
+          width: 0px;
+        }
         .img-group {
-          position: relative;
-          .gif {
+          img {
+            padding: 0 5px;
             height: 187px;
             width: 243px;
-            margin-left: 2vw;
-            cursor: pointer;
-            // &:hover + .img-cover {
-            //   display: block;
-            // }
           }
           .img-cover {
-            height: 187px;
-            width: 243px;
-            @include gradient-opacity(0.6);
-            position: absolute;
-            margin-left: inherit;
-            margin-left: 2vw;
-            top: 0;
             display: none;
-            &:hover {
-              display: block;
-            }
-            .img-action {
-              display: flex;
-              justify-content: flex-end;
-              img {
-                padding-top: 10px;
-                height: 32px;
-                width: 32px;
-                cursor: pointer;
-              }
-              .action-favorite {
-                &:hover {
-                  content: url('../assets/icon-fav-hover.svg');
-                }
-                &:active {
-                  content: url('../assets/icon-fav-active.svg');
-                }
-              }
-              .action-download {
-                &:hover {
-                  content: url('../assets/icon-download-hover.svg');
-                }
-              }
-              .action-maximize {
-                &:hover {
-                  content: url('../assets/icon-max-hover.svg');
-                }
-              }
-            }
           }
         }
       }
-      #move-right {
-        display: none;
-        height: 40px;
-        width: 40px;
-        content: url('/assets/button-slider-right.svg');
+      .move-right-container {
+        .move-right {
+          margin-left: 8px;
+          display: none;
+          height: 40px;
+          width: 40px;
+          content: url('/assets/button-slider-right.svg');
+        }
       }
     }
   }
@@ -302,16 +277,42 @@ main {
         font-size: 35px;
         line-height: 50px;
         text-align: center;
+        width: 75vw;
       }
       .main-image {
         width: 50vw;
       }
       .search-gifo-section {
-        width: 75vw;
-        #search-gifos {
-          width: 40vw;
-          height: 50px;
-          margin-left: 10vw;
+        width: 60vw;
+        justify-content: left;
+        .search-bar {
+          width: inherit;
+          .search-icon {
+            margin-right: 5vw;
+          }
+          .close-search-icon {
+            margin-right: 5vw;
+          }
+        }
+        .sugestion-section {
+          .gif-sugestion {
+            width: 30vw;
+            flex-direction: column;
+            align-items: center;
+            .sugestion-separator {
+              width: 50vw;
+              margin-left: 5vw;
+            }
+            .sugestion-block {
+              width: 45vw;
+              .search-icon-sugestion {
+                margin-left: 0;
+              }
+              .sugestion {
+                margin-left: 3vw;
+              }
+            }
+          }
         }
       }
       .trending {
@@ -320,13 +321,93 @@ main {
           font-size: 18px;
           line-height: 25px;
         }
-        p {
+        .trending-search-term {
           margin-top: 7px;
           width: 402px;
           height: 25px;
           font-size: 1rem;
           text-transform: capitalize;
           text-align: center;
+          a {
+            font-size: 1rem;
+          }
+        }
+      }
+      #gifos-grid {
+        margin-top: 5vw;
+        .img-group {
+          position: relative;
+          img {
+            width: 28vw;
+            height: 28vw;
+            margin-bottom: 2%;
+            &:hover + .img-cover {
+              display: block;
+            }
+          }
+          .img-cover {
+            width: 28vw;
+            height: 28vw;
+            background: $first-color-opacity;
+            position: absolute;
+            top: 0;
+            display: none;
+            &:hover {
+              display: block;
+            }
+            .img-action-container {
+              display: flex;
+              justify-content: flex-end;
+              margin-right: 8px;
+              img {
+                margin-top: 10px;
+                width: 32px;
+                height: 32px;
+                margin-left: 8px;
+              }
+              .favorite-action {
+                content: url('/assets/icon-fav.svg');
+                &:hover {
+                  content: url('/assets/icon-fav-hover.svg');
+                }
+                &:active {
+                  content: url('/assets/icon-fav-active.svg');
+                }
+              }
+              .download-action {
+                content: url('/assets/icon-download.svg');
+                &:hover {
+                  content: url('/assets/icon-download-hover.svg');
+                }
+              }
+              .expand-action {
+                content: url('/assets/icon-max-normal.svg');
+                &:hover {
+                  content: url('/assets/icon-max-hover.svg');
+                }
+              }
+            }
+            .gifo-description {
+              display: flex;
+              flex-direction: column;
+              justify-content: flex-start;
+              text-align: start;
+              margin-top: 80px;
+              margin-left: 20px;
+              .gifo-user {
+                width: 90%;
+                @include gifos-font($second-font, $second-color, 15px, 400);
+              }
+              .gifo-title {
+                margin-top: 10px;
+                text-align: start;
+                padding-top: 0;
+                width: 90%;
+                @include gifos-font($second-font, $second-color, 15px, 700);
+                line-height: 1rem;
+              }
+            }
+          }
         }
       }
     }
@@ -348,16 +429,99 @@ main {
         }
       }
       .gallery-container {
-        position: relative;
-        .gallery-gif {
+        overflow: hidden;
+        .move-left-container {
+          display: flex;
+          justify-content: flex-end;
+          width: 10%;
+          .move-left {
+            display: block;
+            &:hover {
+              content: url('/assets/button-slider-left-hover.svg');
+            }
+          }
+        }
+        .trending-container {
+          width: 80%;
           .img-group {
-            .gif {
+            position: relative;
+            img {
               height: 275px;
               width: 357px;
+              &:hover + .img-cover {
+                display: block;
+              }
             }
             .img-cover {
+              display: none;
+              background: $first-color-opacity;
               height: 275px;
-              width: 357px;
+              width: 348px;
+              position: absolute;
+              top: 0;
+              left: 5px;
+              &:hover {
+                display: block;
+              }
+              img {
+                margin-top: 10px;
+                width: 32px;
+                height: 32px;
+              }
+              .img-action-container {
+                display: flex;
+                justify-content: flex-end;
+                margin-right: 8px;
+                .favorite-action {
+                  content: url('/assets/icon-fav.svg');
+                  &:hover {
+                    content: url('/assets/icon-fav-hover.svg');
+                  }
+                  &:active {
+                    content: url('/assets/icon-fav-active.svg');
+                  }
+                }
+                .download-action {
+                  content: url('/assets/icon-download.svg');
+                  &:hover {
+                    content: url('/assets/icon-download-hover.svg');
+                  }
+                }
+                .expand-action {
+                  content: url('/assets/icon-max-normal.svg');
+                  &:hover {
+                    content: url('/assets/icon-max-hover.svg');
+                  }
+                }
+              }
+              .gifo-description {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                margin-top: 130px;
+                padding-left: 20px;
+                .gifo-user {
+                  width: 90%;
+                  @include gifos-font($second-font, $second-color, 15px, 400);
+                }
+                .gifo-title {
+                  text-align: start;
+                  padding-top: 0;
+                  width: 90%;
+                  @include gifos-font($second-font, $second-color, 15px, 700);
+                }
+              }
+            }
+          }
+        }
+        .move-right-container {
+          display: flex;
+          justify-content: flex-start;
+          width: 10%;
+          .move-right {
+            display: block;
+            &:hover {
+              content: url('/assets/Button-Slider-right-hover.svg');
             }
           }
         }
@@ -368,6 +532,24 @@ main {
 
 @media screen and (min-width: $laptop) {
   main {
+    .gifos {
+      .message {
+        width: 600px;
+      }
+      #gifos-grid {
+        img {
+          width: 20vw;
+          height: 20vw;
+        }
+      }
+      .search-gifo-section {
+        .search-bar {
+          #search-gifos {
+            margin-left: -6vw;
+          }
+        }
+      }
+    }
     .community-gifos {
       .gallery-container {
         #move-left {

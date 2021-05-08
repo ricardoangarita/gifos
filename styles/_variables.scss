@@ -2,16 +2,17 @@
 //Montserrat
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap');
 //Roboto
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 //color light
 $first-color: #572ee5;
-$first-color-opacity: rgba(87, 46, 229, 0.2);
+$first-color-opacity: rgba(87, 46, 229, 0.6);
 $second-color: #fff;
 $third-color: #5ed7c6;
 $fourth-color: #000;
 $fifth-color: #6b7989;
 $sixth-color: #f3f5f8;
 $active-color: #9cafc3;
+$fav-text-color: #50e3c2;
 
 //color night
 $seventh-color: #37383c;
@@ -25,3 +26,4 @@ $second-font: 'Roboto', sans-serif;
 $mobile: 320px;
 $tablet: 768px;
 $laptop: 1024px;
+$laptopXL: 1440px;

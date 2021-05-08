@@ -15,16 +15,16 @@ header {
       display: block;
     }
     #logo {
-      content: url('/assets/logo-mobile.svg');
+      content: url("/assets/logo-mobile.svg");
       padding: 5vw 0 2.9vw 5.9vw;
     }
     .burguer-menu {
       cursor: pointer;
-      padding: 8vw 7.2vw 5.8vw 0;
-      content: url('../assets/burger.svg');
+      padding: 8vw 11vw 5.8vw 0;
+      content: url("../assets/burger.svg");
     }
     .close-burguer-menu {
-      content: url('../assets/close.svg');
+      content: url("../assets/close.svg");
     }
     ul {
       display: flex;
@@ -64,50 +64,68 @@ header {
 @media screen and (min-width: $tablet) {
   header {
     nav {
-      .cover-menu {
-        display: block;
-        position: unset;
-        height: inherit;
-        background: unset;
-      }
-      #logo {
-        padding: 1vh 0vw 1vh 10vh;
-      }
-      #burguer-menu {
+      justify-content: space-between;
+      .burguer-menu {
         display: none;
       }
-      ul {
-        flex-direction: row;
-        justify-content: space-evenly;
-        padding-top: unset;
-        width: 76vw;
-        li {
-          .menu-item {
-            color: $first-color;
-            font-size: 13px;
-            text-transform: uppercase;
+      #logo {
+        padding-top: 3vw;
+      }
+      .cover-menu {
+        display: block;
+        height: inherit;
+        background: transparent !important;
+        position: unset;
+        padding: 1vh 7.1vw 1vh 0;
+        ul {
+          flex-direction: row;
+          justify-content: space-between;
+          padding-top: unset;
+          width: 50vw;
+          li {
+            .menu-item {
+              color: $first-color;
+              font-size: 13px;
+              text-transform: uppercase;
+              &:hover {
+                text-decoration: underline;
+                text-decoration-color: $third-color;
+                text-decoration-thickness: 2px;
+              }
+              &:active {
+                color: $active-color;
+                text-decoration: none;
+              }
+            }
+            .menu-separator {
+              display: none;
+            }
+          }
+          .plus-menu-item {
+            display: block;
             &:hover {
-              text-decoration: underline;
-              text-decoration-color: $third-color;
-              text-decoration-thickness: 2px;
+              content: url("../assets/CTA-crear-gifo-hover.svg");
             }
             &:active {
-              color: $active-color;
-              text-decoration: none;
+              content: url("../assets/CTA-crear-gifo-active.svg");
             }
           }
-          .menu-separator {
-            display: none;
-          }
         }
-        .plus-menu-item {
-          display: block;
-          &:hover {
-            content: url('../assets/CTA-crear-gifo-hover.svg');
-          }
-          &:active {
-            content: url('../assets/CTA-crear-gifo-active.svg');
-          }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $laptop) {
+  header {
+    nav {
+      #logo {
+        padding-top: 1.5vw;
+        content: url("/assets/logo-desktop.svg");
+      }
+      .cover-menu {
+        ul {
+          width: 40vw;
         }
       }
     }

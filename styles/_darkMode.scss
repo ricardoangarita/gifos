@@ -4,9 +4,6 @@
     background-color: $seventh-color;
     header {
       nav {
-        .cover-menu {
-          background-color: $fourth-color;
-        }
         #logo {
           content: url('/assets/logo-mobile-modo-noct.svg');
         }
@@ -16,16 +13,19 @@
         .close-burguer-menu {
           content: url('/assets/close-modo-noct.svg');
         }
-        .menu-item {
-          color: $second-color;
-        }
-        .plus-menu-item {
-          content: url('../assets/CTA-crear-gifo-modo-noc.svg');
-          &:hover {
-            content: url('../assets/CTA-crear-gifo-hover-modo-noc.svg');
+        .cover-menu {
+          background-color: $fourth-color;
+          .menu-item {
+            color: $second-color;
           }
-          &:active {
-            content: url('../assets/CTA-crear-gifo-active-modo-noc.svg');
+          .plus-menu-item {
+            content: url('../assets/CTA-crear-gifo-modo-noc.svg');
+            &:hover {
+              content: url('../assets/CTA-crear-gifo-hover-modo-noc.svg');
+            }
+            &:active {
+              content: url('../assets/CTA-crear-gifo-active-modo-noc.svg');
+            }
           }
         }
       }
@@ -98,6 +98,24 @@
         .community-message {
           span {
             color: $second-color;
+          }
+        }
+        .gallery-container {
+          .move-left-container {
+            .move-left {
+              content: url('/assets/button-slider-left-md-noct.svg');
+              &:hover {
+                content: url('/assets/button-slider-left-hover.svg');
+              }
+            }
+          }
+          .move-right-container {
+            .move-right {
+              content: url('/assets/button-slider-right-md-noct.svg');
+              &:hover {
+                content: url('/assets/Button-Slider-right-hover.svg');
+              }
+            }
           }
         }
       }
