@@ -1,4 +1,5 @@
 import * as constant from './constants.js';
+import * as media from './media.js';
 
 if (localStorage.getItem('darkMode') === 'true') {
   UpdatePresentationMode();
@@ -6,6 +7,7 @@ if (localStorage.getItem('darkMode') === 'true') {
 }
 
 LoadSection(constant.SEARCHHTMLURL);
+// LoadSection(constant.CREATEGIFOSHTMLURL);
 
 document.getElementById('logo').addEventListener('click', () => {
   LoadSection(constant.SEARCHHTMLURL);
@@ -34,11 +36,16 @@ document.getElementById('gifos-url').addEventListener('click', () => {
   ShowMenu();
 });
 
+document.querySelector('.plus-menu-item').addEventListener('click', () => {
+  LoadSection(constant.CREATEGIFOSHTMLURL);
+  document.querySelector('.community-gifos').style.display = 'none';
+});
+
 document.querySelector('.move-right').addEventListener('click', () => {
   document.querySelector('.trending-container').scrollBy({
     left: 300,
     top: 0,
-    behavior: 'smooth',
+    behavior: 'smooth'
   });
 });
 
@@ -46,7 +53,7 @@ document.querySelector('.move-left').addEventListener('click', () => {
   document.querySelector('.trending-container').scrollBy({
     left: -300,
     top: 0,
-    behavior: 'smooth',
+    behavior: 'smooth'
   });
 });
 
@@ -91,9 +98,7 @@ async function LoadSection(htmlUrl) {
     let searchGifo = document.getElementById('search-gifos');
     searchIcon.addEventListener('click', RemoveSearch);
     searchGifo.addEventListener('input', ChangeSearchText);
-    searchGifo.addEventListener('keypress', (e) =>
-      SearchByEnterKey(e, searchGifo.value)
-    );
+    searchGifo.addEventListener('keypress', e => SearchByEnterKey(e, searchGifo.value));
     await LoadTrendingSearchTerm();
   } else if (htmlUrl === constant.FAVORITEHTMLURL) {
     let favoriteList = JSON.parse(localStorage.getItem('favorite'));
@@ -108,23 +113,22 @@ async function LoadSection(htmlUrl) {
       emptyFavorite.classList.add('empty-favorite-grid');
       let img = document.createElement('img');
       let span = document.createElement('span');
-      span.textContent =
-        '"¡Guarda tu primer GIFO en Favoritos para que se muestre aqui!"';
+      span.textContent = '"¡Guarda tu primer GIFO en Favoritos para que se muestre aqui!"';
       emptyFavorite.appendChild(img);
       emptyFavorite.appendChild(span);
       favoriteListSection.appendChild(emptyFavorite);
     }
-  } else if (htmlUrl === constant.GETGIFOSURL) {
+  } else if (htmlUrl === constant.GIFOSHTMLURL) {
     let myGifosList = JSON.parse(localStorage.getItem('myGif'));
     let myGifosSection = document.querySelector('.gifos-grid-section');
     if (myGifosList !== null && myGifosList.length > 0) {
       let myGifosGrid = document.createElement('div');
       myGifosGrid.classList.add('my-gifos-grid');
-      myGifosList.slice(0, constant.GIFOSLIMIT).forEach((x) => {
+      myGifosList.slice(0, constant.GIFOSLIMIT).forEach(x => {
         let img = document.createElement('img');
         img.setAttribute('src', x.url);
         img.setAttribute('alt', `${x.id} - ${x.username} - ${x.title}`);
-        img.addEventListener('click', (e) => {
+        img.addEventListener('click', e => {
           ExpandedGifo(e);
         });
         myGifosGrid.appendChild(img);
@@ -132,28 +136,25 @@ async function LoadSection(htmlUrl) {
       myGifosSection.appendChild(myGifosGrid);
     } else {
       let emptyGifos = document.createElement('div');
-      emptyGifos.classList.add('empty-favorite-grid');
+      emptyGifos.classList.add('empty-gifos-grid');
       let img = document.createElement('img');
       let span = document.createElement('span');
-      span.textContent =
-        '"¡Guarda tu primer GIFO en Favoritos para que se muestre aqui!"';
+      span.textContent = '"¡Guarda tu primer GIFO en Favoritos para que se muestre aqui!"';
       emptyGifos.appendChild(img);
       emptyGifos.appendChild(span);
-      myGifosSection.appendChild(emptyFavorite);
+      myGifosSection.appendChild(emptyGifos);
     }
+  } else if (htmlUrl === constant.CREATEGIFOSHTMLURL) {
+    media.GetCameraAccess(constant.MEDIACONSTRAINTS);
   }
 }
 
-let createGifosGrid = async (wildcard) => {
+let createGifosGrid = async wildcard => {
   if (wildcard.trim() !== '') {
     let typoSearchIcon = document.querySelector('.typo-search-icon');
     typoSearchIcon.classList.remove('show-typo-search-icon');
     sessionStorage.setItem('searchGifoOffset', 0);
-    await CallSearchEndpoint(
-      constant.GETGIFOSURL,
-      wildcard,
-      constant.GIFOSLIMIT
-    ).then((res) => {
+    await CallSearchEndpoint(constant.GETGIFOSURL, wildcard, constant.GIFOSLIMIT).then(res => {
       let gifos = res.data;
       let grid = document.getElementById('gifos-grid');
       const gifosSeeMore = document.getElementById('gifos-see-more');
@@ -170,7 +171,7 @@ let createGifosGrid = async (wildcard) => {
         let more = document.getElementById('gifos-see-more');
         more.innerHTML = '';
 
-        gifos.forEach((x) => {
+        gifos.forEach(x => {
           let img = document.createElement('img');
           img.setAttribute('src', x.images.original.url);
           img.setAttribute('alt', `${x.id} - ${x.username} - ${x.title}`);
@@ -178,7 +179,7 @@ let createGifosGrid = async (wildcard) => {
             id: x.id,
             url: x.images.original.url,
             username: x.username,
-            title: x.title,
+            title: x.title
           };
           img.addEventListener('click', () => {
             ExpandedGifo(gifoInfo);
@@ -210,7 +211,7 @@ let createGifosGrid = async (wildcard) => {
               id: x.id,
               url: x.images.original.url,
               username: x.username,
-              title: x.title,
+              title: x.title
             });
           });
 
@@ -239,15 +240,9 @@ let createGifosGrid = async (wildcard) => {
           grid.appendChild(imgGroup);
         });
 
-        sessionStorage.setItem(
-          'searchGifoOffset',
-          res.pagination.count + res.pagination.offset
-        );
+        sessionStorage.setItem('searchGifoOffset', res.pagination.count + res.pagination.offset);
 
-        if (
-          res.pagination.total_count >
-          sessionStorage.getItem('searchGifoOffset')
-        ) {
+        if (res.pagination.total_count > sessionStorage.getItem('searchGifoOffset')) {
           let boxSeeMore = document.createElement('div');
           let seeMore = document.createElement('div');
           seeMore.textContent = 'VER MÁS';
@@ -274,14 +269,9 @@ let createGifosGrid = async (wildcard) => {
 
 let seeMoreGrid = async (grid, wildcard) => {
   let offset = sessionStorage.getItem('searchGifoOffset');
-  await CallSearchEndpoint(
-    constant.GETGIFOSURL,
-    wildcard,
-    constant.GIFOSLIMIT,
-    offset
-  ).then((res) => {
+  await CallSearchEndpoint(constant.GETGIFOSURL, wildcard, constant.GIFOSLIMIT, offset).then(res => {
     let gifos = res.data;
-    gifos.forEach((x) => {
+    gifos.forEach(x => {
       let img = document.createElement('img');
       img.setAttribute('src', x.images.original.url);
       img.setAttribute('alt', `${x.id} - ${x.username} - ${x.title}`);
@@ -289,7 +279,7 @@ let seeMoreGrid = async (grid, wildcard) => {
         id: x.id,
         url: x.images.original.url,
         username: x.username,
-        title: x.title,
+        title: x.title
       };
       img.addEventListener('click', () => {
         ExpandedGifo(gifoInfo);
@@ -321,7 +311,7 @@ let seeMoreGrid = async (grid, wildcard) => {
           id: x.id,
           url: x.images.original.url,
           username: x.username,
-          title: x.title,
+          title: x.title
         });
       });
 
@@ -349,10 +339,7 @@ let seeMoreGrid = async (grid, wildcard) => {
 
       grid.appendChild(imgGroup);
     });
-    sessionStorage.setItem(
-      'searchGifoOffset',
-      res.pagination.count + res.pagination.offset
-    );
+    sessionStorage.setItem('searchGifoOffset', res.pagination.count + res.pagination.offset);
   });
 };
 
@@ -372,15 +359,11 @@ let CallSearchEndpoint = async (url, wildcard, limit, offset) => {
   return jsonResult;
 };
 
-let ChangeSearchText = async (e) => {
+let ChangeSearchText = async e => {
   let searchIcon = document.querySelector('.search-icon');
   if (e.target.value.trim() !== '') {
     searchIcon.classList.add('close-search-icon');
-    await CallSearchEndpoint(
-      constant.GETGIFOSAUTOCOMPLETEURL,
-      e.target.value,
-      constant.SUGESTIONLIMIT
-    ).then((res) => {
+    await CallSearchEndpoint(constant.GETGIFOSAUTOCOMPLETEURL, e.target.value, constant.SUGESTIONLIMIT).then(res => {
       let typoSearch = document.querySelector('.typo-search-icon');
       typoSearch.classList.add('show-typo-search-icon');
       let sugestionSection = document.querySelector('.sugestion-section');
@@ -395,7 +378,7 @@ let ChangeSearchText = async (e) => {
       gifSugestion.appendChild(sugestionSeparator);
       sugestionSection.appendChild(gifSugestion);
       if (res.data.length > 0) {
-        res.data.forEach((x) => {
+        res.data.forEach(x => {
           let sugestionBlock = document.createElement('div');
           sugestionBlock.classList.add('sugestion-block');
 
@@ -437,9 +420,9 @@ let SearchByEnterKey = async (e, wildcard) => {
 };
 
 const LoadTrendingGrifos = async () => {
-  await CallSearchEndpoint(constant.GETGIFOSTRENDINGURL).then((res) => {
+  await CallSearchEndpoint(constant.GETGIFOSTRENDINGURL).then(res => {
     const trendingContainer = document.querySelector('.trending-container');
-    res.data.forEach((x) => {
+    res.data.forEach(x => {
       const imgGroup = document.createElement('div');
       imgGroup.classList.add('img-group');
 
@@ -452,7 +435,7 @@ const LoadTrendingGrifos = async () => {
         id: x.id,
         url: x.images.original.url,
         username: x.username,
-        title: x.title,
+        title: x.title
       };
 
       gifosImg.addEventListener('click', () => {
@@ -484,7 +467,7 @@ const LoadTrendingGrifos = async () => {
           id: x.id,
           url: x.images.original.url,
           username: x.username,
-          title: x.title,
+          title: x.title
         });
       });
 
@@ -525,38 +508,32 @@ const RemoveSearch = () => {
 
 const LoadTrendingSearchTerm = async () => {
   await CallSearchEndpoint(constant.GETGIFOSTRENDINGTERMSURL)
-    .then((res) => {
-      const trendingSearchTerm = document.querySelector(
-        '.trending-search-term'
-      );
+    .then(res => {
+      const trendingSearchTerm = document.querySelector('.trending-search-term');
       trendingSearchTerm.classList.add('treding-search-term');
       res.data.slice(0, constant.TRENDINGSEARCHNUMBER).forEach((x, index) => {
         const a = document.createElement('a');
-        a.textContent =
-          index !== constant.TRENDINGSEARCHNUMBER - 1 ? `${x},` : `${x}`;
+        a.textContent = index !== constant.TRENDINGSEARCHNUMBER - 1 ? `${x},` : `${x}`;
         a.addEventListener('click', async () => {
           const wildcard = a.textContent.replace(',', '');
           await createGifosGrid(wildcard);
           let searchTerm = document.getElementById('search-gifos');
-          searchTerm.value = wildcard.replace(
-            /(^\w{1})|(\s+\w{1})/g,
-            (letter) => letter.toUpperCase()
-          );
+          searchTerm.value = wildcard.replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase());
         });
         trendingSearchTerm.appendChild(a);
       });
     })
-    .catch((err) => {
+    .catch(err => {
       console.log(err);
     });
 };
 
-const ExpandedGifo = (gifoInfo) => {
+const ExpandedGifo = gifoInfo => {
   let gifo = {
     id: gifoInfo.id,
     url: gifoInfo.url,
     username: gifoInfo.username,
-    title: gifoInfo.title,
+    title: gifoInfo.title
   };
   sessionStorage.setItem('gifoUrl', JSON.stringify(gifo));
   window.open('./expanded-gifo.html', '_self');
@@ -570,7 +547,7 @@ const FavoriteSeeMore = () => {
 
   let favoriteList = JSON.parse(localStorage.getItem('favorite'));
 
-  favoriteList.slice(start, end).forEach((x) => {
+  favoriteList.slice(start, end).forEach(x => {
     let img = document.createElement('img');
     img.setAttribute('src', x.url);
     img.setAttribute('alt', `${x.id} - ${x.username} - ${x.title}`);
@@ -578,7 +555,7 @@ const FavoriteSeeMore = () => {
       id: x.id,
       url: x.url,
       username: x.username,
-      title: x.title,
+      title: x.title
     };
     img.addEventListener('click', () => {
       ExpandedGifo(gifoInfo);
@@ -647,16 +624,10 @@ const LoadFavoriteGif = () => {
 
   let favoriteGrid = document.querySelector('.favorite-grid');
 
-  let start =
-    sessionStorage.getItem('favoriteStart') === null
-      ? 0
-      : sessionStorage.getItem('favoriteStart');
-  let end =
-    sessionStorage.getItem('favoriteEnd') === null
-      ? constant.GIFOSLIMIT
-      : sessionStorage.getItem('favoriteEnd');
+  let start = sessionStorage.getItem('favoriteStart') === null ? 0 : sessionStorage.getItem('favoriteStart');
+  let end = sessionStorage.getItem('favoriteEnd') === null ? constant.GIFOSLIMIT : sessionStorage.getItem('favoriteEnd');
 
-  favoriteList.slice(start, end).forEach((x) => {
+  favoriteList.slice(start, end).forEach(x => {
     let img = document.createElement('img');
     img.setAttribute('src', x.url);
     img.setAttribute('alt', `${x.id} - ${x.username} - ${x.title}`);
@@ -664,7 +635,7 @@ const LoadFavoriteGif = () => {
       id: x.id,
       url: x.url,
       username: x.username,
-      title: x.title,
+      title: x.title
     };
     img.addEventListener('click', () => {
       ExpandedGifo(gifoInfo);
@@ -722,10 +693,7 @@ const LoadFavoriteGif = () => {
   });
 
   sessionStorage.setItem('favoriteStart', parseInt(end));
-  sessionStorage.setItem(
-    'favoriteEnd',
-    parseInt(end) + parseInt(constant.GIFOSLIMIT)
-  );
+  sessionStorage.setItem('favoriteEnd', parseInt(end) + parseInt(constant.GIFOSLIMIT));
   if (favoriteList.length > start) {
     let moreFavorite = document.createElement('div');
     moreFavorite.classList.add('more-favorite');
@@ -739,29 +707,29 @@ const LoadFavoriteGif = () => {
 
 const downloadGifo = async (url, title) => {
   await fetch(url)
-    .then(async (res) => {
+    .then(async res => {
       let gif = await res.blob();
       let a = document.createElement('a');
       a.download = title;
       a.href = window.URL.createObjectURL(gif);
       a.click();
     })
-    .catch((err) => {
+    .catch(err => {
       console.log(err);
     });
 };
 
-const FavoriteAdd = (gifoInfo) => {
+const FavoriteAdd = gifoInfo => {
   let favoriteGifo = {
     id: gifoInfo.id,
     url: gifoInfo.url,
     username: gifoInfo.username,
-    title: gifoInfo.title,
+    title: gifoInfo.title
   };
   let favoriteList = JSON.parse(localStorage.getItem('favorite'));
   favoriteList = favoriteList !== null ? favoriteList : [];
 
-  if (!favoriteList.find((x) => gifoInfo.id === x.id)) {
+  if (!favoriteList.find(x => gifoInfo.id === x.id)) {
     favoriteList.unshift(favoriteGifo);
     localStorage.setItem('favorite', JSON.stringify(favoriteList));
   }

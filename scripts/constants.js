@@ -1,29 +1,19 @@
-const APIKEYGIFOS = "7tvG35EiUg9Pi7V5aELOFBvHtNacuRrT";
-const GETGIFOSURL = "https://api.giphy.com/v1/gifs/search";
-const GETGIFOSTRENDINGURL = "https://api.giphy.com/v1/gifs/trending";
-const GETGIFOSAUTOCOMPLETEURL = "https://api.giphy.com/v1/gifs/search/tags";
-const GETGIFOSTRENDINGTERMSURL = "https://api.giphy.com/v1/trending/searches";
-const LIGHT = "Modo Diurno";
-const DARK = "modo nocturno";
-const SEARCHHTMLURL = "./search.html";
-const FAVORITEHTMLURL = "./favorite.html";
-const GIFOSHTMLURL = "./gifos.html";
+const GIFOSUSERACCOUNT = 'paolandreacj';
+const APIKEYGIFOS = '2hNX2kUxSXcQf3JF8iYUgeLr0rt6NHUS';
+const GETGIFOSURL = 'https://api.giphy.com/v1/gifs/search';
+const GETGIFOSTRENDINGURL = 'https://api.giphy.com/v1/gifs/trending';
+const GETGIFOSAUTOCOMPLETEURL = 'https://api.giphy.com/v1/gifs/search/tags';
+const GETGIFOSTRENDINGTERMSURL = 'https://api.giphy.com/v1/trending/searches';
+const UPLOADGIFOURL = 'https://upload.giphy.com/v1/gifs';
+const LIGHT = 'Modo Diurno';
+const DARK = 'modo nocturno';
+const SEARCHHTMLURL = './search.html';
+const FAVORITEHTMLURL = './favorite.html';
+const GIFOSHTMLURL = './gifos.html';
+const CREATEGIFOSHTMLURL = './create-gifos.html';
 const GIFOSLIMIT = 12;
 const SUGESTIONLIMIT = 4;
 const TRENDINGSEARCHNUMBER = 6;
+const MEDIACONSTRAINTS = { audio: false, video: { height: { max: 480 } } };
 
-export {
-  APIKEYGIFOS,
-  GETGIFOSURL,
-  GETGIFOSTRENDINGURL,
-  GETGIFOSAUTOCOMPLETEURL,
-  GETGIFOSTRENDINGTERMSURL,
-  LIGHT,
-  DARK,
-  SEARCHHTMLURL,
-  FAVORITEHTMLURL,
-  GIFOSHTMLURL,
-  GIFOSLIMIT,
-  SUGESTIONLIMIT,
-  TRENDINGSEARCHNUMBER,
-};
+export { GIFOSUSERACCOUNT, APIKEYGIFOS, GETGIFOSURL, GETGIFOSTRENDINGURL, GETGIFOSAUTOCOMPLETEURL, GETGIFOSTRENDINGTERMSURL, UPLOADGIFOURL, LIGHT, DARK, SEARCHHTMLURL, FAVORITEHTMLURL, GIFOSHTMLURL, CREATEGIFOSHTMLURL, GIFOSLIMIT, SUGESTIONLIMIT, TRENDINGSEARCHNUMBER, MEDIACONSTRAINTS };

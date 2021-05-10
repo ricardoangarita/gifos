@@ -1,0 +1,112 @@
+.giphy-container {
+  // border: 1px solid blue;
+  margin: 0 6%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  .recorder-container {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    .camera-container {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      position: absolute;
+      left: 0;
+      top: 30%;
+      .camera-image {
+        content: url('/assets/camara.svg');
+        width: 90px;
+      }
+      .camera-light {
+        content: url('/assets/element-luz-camara.svg');
+        width: 60px;
+      }
+    }
+    .outer-recorder {
+      border: 1px solid $first-color;
+      width: 400px;
+      height: 290px;
+      .inner-recorder {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 240px;
+        margin: 24px;
+        background: linear-gradient(to right, $fav-text-color 1px, transparent 1px) 0 0, linear-gradient(to right, $fav-text-color 1px, transparent 1px) 0 100%, linear-gradient(to left, $fav-text-color 1px, transparent 1px) 100% 0, linear-gradient(to left, $fav-text-color 1px, transparent 1px) 100% 100%, linear-gradient(to bottom, $fav-text-color 1px, transparent 1px) 0 0, linear-gradient(to bottom, $fav-text-color 1px, transparent 1px) 100% 0, linear-gradient(to top, $fav-text-color 1px, transparent 1px) 0 100%, linear-gradient(to top, $fav-text-color 1px, transparent 1px) 100% 100%;
+        background-repeat: no-repeat;
+        background-size: 20px 20px;
+        .text-container {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-end;
+          .first-text {
+            text-align: center;
+            line-height: 35px;
+            @include gifos-font($first-font, $first-color, 25px, 700);
+            .gifos-text {
+              @include gifos-font($first-font, $fav-text-color, 25px, 700);
+            }
+          }
+          .second-text {
+            text-align: center;
+            line-height: 29px;
+            @include gifos-font($second-font, $eighth-color, 1rem, 400);
+          }
+        }
+      }
+    }
+    .recorder-steps {
+      margin: 24px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      .step {
+        width: 32px;
+        height: 32px;
+        border-radius: 100%;
+        border: 1px solid $first-color;
+        margin-left: 26px;
+        .number-step {
+          @include gifos-font($second-font, $first-color, 18px, 400);
+          display: block;
+          text-align: center;
+          margin-top: 5px;
+        }
+      }
+      .movie {
+        content: url('/assets/pelicula.svg');
+        position: absolute;
+        right: -130px;
+        top: -30px;
+        width: 125px;
+      }
+    }
+  }
+  .recorder-line {
+    width: 65%;
+    height: 7px;
+    background-color: $first-color;
+    border-radius: 25px;
+  }
+  .start-recorder {
+    border: 1px solid $first-color;
+    border-radius: 25px;
+    width: 127px;
+    height: 50px;
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 26px;
+    .text-start-recorder {
+      letter-spacing: 0;
+      @include gifos-font($first-font, $first-color, 13px, 700);
+      display: block;
+      margin-top: 16px;
+    }
+  }
+}
