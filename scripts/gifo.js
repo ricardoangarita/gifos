@@ -1,4 +1,4 @@
-//Load Gifos page.
+import * as constant from './constants.js';
 
 function Load() {
   if (localStorage.getItem('darkMode') === 'true') {
@@ -21,17 +21,26 @@ function Load() {
   const gifoTitle = document.querySelector('.gifo-title');
   gifoTitle.textContent = gifoInfo.title;
 
-  const favoriteAction = document.querySelector('.expanded-action-favorite');
-  let favoriteList = JSON.parse(localStorage.getItem('favorite'));
-  if (favoriteList !== null) {
-    if (favoriteList.find(x => gifoInfo.id === x.id)) {
-      favoriteAction.classList.add('expanded-action-favorite-select');
-    }
-  }
-  favoriteAction.addEventListener('click', e => {
-    FavoriteSelect(e);
-  });
+  if (gifoInfo.url.includes(constant.GIFSURL)) {
+    const deleteGifAction = document.querySelector('.expanded-action-favorite');
+    deleteGifAction.classList.add('expanded-action-delete-gif');
+    deleteGifAction.addEventListener('click', () => {
+      RemoveGif(gifoInfo.id);
+    });
+  } else {
+    const favoriteAction = document.querySelector('.expanded-action-favorite');
 
+    let favoriteList = JSON.parse(localStorage.getItem('favorite'));
+    if (favoriteList !== null) {
+      if (favoriteList.find((x) => gifoInfo.id === x.id)) {
+        favoriteAction.classList.add('expanded-action-favorite-select');
+      }
+    }
+
+    favoriteAction.addEventListener('click', (e) => {
+      FavoriteSelect(e);
+    });
+  }
   const downloadAction = document.querySelector('.expanded-action-download');
   downloadAction.addEventListener('click', async () => {
     await DownloadGifo(gifoInfo);
@@ -57,7 +66,7 @@ function FavoriteAdd(favoriteList, gifoInfo) {
     id: gifoInfo.id,
     url: gifoInfo.url,
     username: gifoInfo.username,
-    title: gifoInfo.title
+    title: gifoInfo.title,
   };
   favoriteList.unshift(favoriteGifo);
   localStorage.setItem('favorite', JSON.stringify(favoriteList));
@@ -84,16 +93,27 @@ function FavoriteSelect(e) {
 
 async function DownloadGifo(gifoInfo) {
   await fetch(gifoInfo.url)
-    .then(async res => {
+    .then(async (res) => {
       let gif = await res.blob();
       let a = document.createElement('a');
       a.download = gifoInfo.title;
       a.href = window.URL.createObjectURL(gif);
       a.click();
     })
-    .catch(err => {
+    .catch((err) => {
       console.log(err);
     });
+}
+
+function RemoveGif(id) {
+  const gifos = JSON.parse(localStorage.getItem('gifos'));
+  gifos.filter((value, index) => {
+    if (value.id === id) {
+      gifos.splice(index, 1);
+    }
+  });
+  localStorage.setItem('gifos', JSON.stringify(gifos));
+  CloseExpandedGifo();
 }
 
 Load();

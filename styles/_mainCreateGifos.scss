@@ -1,5 +1,4 @@
 .giphy-container {
-  // border: 1px solid blue;
   margin: 0 6%;
   display: flex;
   flex-direction: column;
@@ -16,7 +15,7 @@
       align-items: center;
       position: absolute;
       left: 0;
-      top: 30%;
+      top: 20%;
       .camera-image {
         content: url('/assets/camara.svg');
         width: 90px;
@@ -30,20 +29,39 @@
       border: 1px solid $first-color;
       width: 400px;
       height: 290px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       .inner-recorder {
         display: flex;
         justify-content: center;
         align-items: center;
         height: 240px;
         margin: 24px;
-        background: linear-gradient(to right, $fav-text-color 1px, transparent 1px) 0 0, linear-gradient(to right, $fav-text-color 1px, transparent 1px) 0 100%, linear-gradient(to left, $fav-text-color 1px, transparent 1px) 100% 0, linear-gradient(to left, $fav-text-color 1px, transparent 1px) 100% 100%, linear-gradient(to bottom, $fav-text-color 1px, transparent 1px) 0 0, linear-gradient(to bottom, $fav-text-color 1px, transparent 1px) 100% 0, linear-gradient(to top, $fav-text-color 1px, transparent 1px) 0 100%, linear-gradient(to top, $fav-text-color 1px, transparent 1px) 100% 100%;
+        background: linear-gradient(
+              to right,
+              $fav-text-color 1px,
+              transparent 1px
+            )
+            0 0,
+          linear-gradient(to right, $fav-text-color 1px, transparent 1px) 0 100%,
+          linear-gradient(to left, $fav-text-color 1px, transparent 1px) 100% 0,
+          linear-gradient(to left, $fav-text-color 1px, transparent 1px) 100%
+            100%,
+          linear-gradient(to bottom, $fav-text-color 1px, transparent 1px) 0 0,
+          linear-gradient(to bottom, $fav-text-color 1px, transparent 1px) 100%
+            0,
+          linear-gradient(to top, $fav-text-color 1px, transparent 1px) 0 100%,
+          linear-gradient(to top, $fav-text-color 1px, transparent 1px) 100%
+            100%;
         background-repeat: no-repeat;
         background-size: 20px 20px;
+        position: relative;
         .text-container {
           display: flex;
           flex-direction: column;
           justify-content: center;
-          align-items: flex-end;
+          align-items: center;
           .first-text {
             text-align: center;
             line-height: 35px;
@@ -57,6 +75,75 @@
             line-height: 29px;
             @include gifos-font($second-font, $eighth-color, 1rem, 400);
           }
+          .third-text {
+            text-align: center;
+            line-height: 29px;
+            @include gifos-font($second-font, $eighth-color, 15px, 400);
+          }
+        }
+        .text-container-hidden {
+          display: none;
+        }
+        .video {
+          height: 240px;
+          width: auto;
+          padding: 15px;
+        }
+        .video-hidden {
+          display: none;
+        }
+        .upload-gif-container {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          height: 210px;
+          width: 280px;
+          background: $first-color-opacity;
+          position: absolute;
+          margin: 15px;
+          top: 0;
+          .upload-gif-action-container {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            .download-action {
+              width: 32px;
+              height: 32px;
+              cursor: pointer;
+              content: url('../assets/icon-download.svg');
+              &:hover {
+                content: url('../assets/icon-download-hover.svg');
+              }
+            }
+            .link-action {
+              width: 32px;
+              height: 32px;
+              margin-left: 5px;
+              cursor: pointer;
+              content: url('../assets/icon-link-normal.svg');
+              &:hover {
+                content: url('../assets/icon-link-hover.svg');
+              }
+            }
+          }
+          .upload-gif-action-container-hidden {
+            display: none;
+          }
+          .gif-status-loading {
+            content: url('../assets/loader.svg');
+          }
+          .gif-status-done {
+            content: url('../assets/ok.svg');
+          }
+          .gif-status-text {
+            margin-top: 14px;
+            text-align: center;
+            @include gifos-font($first-font, $second-color, 15px, 700);
+          }
+        }
+        .upload-gif-container-hidden {
+          display: none;
         }
       }
     }
@@ -79,6 +166,35 @@
           margin-top: 5px;
         }
       }
+      .step-on-going {
+        background: $first-color;
+        .number-step-on-going {
+          color: $second-color;
+        }
+      }
+      .timer {
+        letter-spacing: 0;
+        text-align: center;
+        line-height: 22px;
+        @include gifos-font($first-font, $first-color, 15px, 700);
+        position: absolute;
+        top: 5px;
+        right: 0;
+      }
+      .timer-hidden {
+        display: none;
+      }
+      .repeat-recorder {
+        letter-spacing: 0;
+        text-align: center;
+        @include gifos-font($first-font, $first-color, 11px, 700);
+        text-decoration: underline;
+        text-decoration-color: $third-color;
+        text-decoration-thickness: 2px;
+        text-transform: uppercase;
+        cursor: pointer;
+      }
+
       .movie {
         content: url('/assets/pelicula.svg');
         position: absolute;
@@ -94,7 +210,8 @@
     background-color: $first-color;
     border-radius: 25px;
   }
-  .start-recorder {
+  .recorder {
+    cursor: pointer;
     border: 1px solid $first-color;
     border-radius: 25px;
     width: 127px;
@@ -102,11 +219,53 @@
     text-align: center;
     margin-top: 20px;
     margin-left: 26px;
-    .text-start-recorder {
+    .text-recorder {
       letter-spacing: 0;
       @include gifos-font($first-font, $first-color, 13px, 700);
       display: block;
       margin-top: 16px;
+    }
+  }
+  .recorder-hidden {
+    display: none;
+  }
+}
+
+@media screen and (min-width: $laptop) {
+  .giphy-container {
+    .recorder-container {
+      width: 50vw;
+      .camera-container {
+        .camera-image {
+          width: 123px;
+          height: 162px;
+        }
+        .camera-light {
+          width: 80px;
+        }
+      }
+      .outer-recorder {
+        width: 50vw;
+        height: 40vh;
+        .inner-recorder {
+          width: 45vw;
+          height: 40vh;
+          .video {
+            height: 300px;
+          }
+          .upload-gif-container {
+            height: 270px;
+            width: 360px;
+            top: unset;
+          }
+        }
+      }
+      .recorder-steps {
+        .movie {
+          width: 150px;
+          right: -190px;
+        }
+      }
     }
   }
 }

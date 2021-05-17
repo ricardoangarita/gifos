@@ -20,17 +20,17 @@ footer {
       }
       #facebook {
         &:hover {
-          content: url("/assets/icon_facebook_hover.svg");
+          content: url('/assets/icon_facebook_hover.svg');
         }
       }
       #twitter {
         &:hover {
-          content: url("/assets/icon-twitter-hover.svg");
+          content: url('/assets/icon-twitter-hover.svg');
         }
       }
       #instagram {
         &:hover {
-          content: url("/assets/icon_instagram-hover.svg");
+          content: url('/assets/icon_instagram-hover.svg');
         }
       }
     }
@@ -47,16 +47,25 @@ footer {
   footer {
     .social-media-section {
       flex-direction: row;
-      span {
+      .share-text {
         padding-left: 10vw;
       }
       .copyright {
-        padding-left: 22vw;
+        padding-left: 21vw;
       }
       .social-media-icon {
         width: 20vw;
         margin: 0;
         padding-top: 44px;
+      }
+    }
+  }
+}
+@media screen and (min-width: $laptop) {
+  footer {
+    .social-media-section {
+      .copyright {
+        padding-left: 30vw;
       }
     }
   }

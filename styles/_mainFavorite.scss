@@ -20,13 +20,13 @@
     margin-top: 36px;
     .favorite-grid {
       display: flex;
-      justify-content: space-around;
       flex-wrap: wrap;
       .img-group {
+        margin-bottom: 1%;
+        margin-left: 2%;
         img {
           height: 40vw;
           width: 40vw;
-          margin-bottom: 3%;
         }
         .img-cover {
           display: none;
@@ -49,6 +49,10 @@
         text-transform: uppercase;
         vertical-align: middle;
         width: 127px;
+        &:hover {
+          background: $first-color;
+          color: $second-color;
+        }
       }
     }
     .empty-favorite-grid {
@@ -80,9 +84,8 @@
         .img-group {
           position: relative;
           img {
-            width: 28vw;
-            height: 28vw;
-            margin-bottom: 2%;
+            width: 27vw;
+            height: 27vw;
             &:hover + .img-cover {
               display: block;
             }
@@ -153,13 +156,19 @@
 @media screen and (min-width: $laptop) {
   .favorite {
     .favorite-list-section {
-      .favorite-grid-container {
-        .favorite-grid {
+      .favorite-grid {
+        .img-group {
+          margin-bottom: 2%;
           img {
             height: 20vw;
             width: 20vw;
-            margin-bottom: 2%;
-            cursor: pointer;
+          }
+          .img-cover {
+            height: 20vw;
+            width: 20vw;
+            .gifo-description {
+              margin-top: 140px;
+            }
           }
         }
       }

@@ -21,61 +21,69 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    .expanded-gifo-section {
-      display: flex;
-      justify-content: center;
-      margin-top: 78px;
-      .expanded-gifo {
-        width: 90vw;
-        height: 40vh;
-      }
-    }
-    .expanded-container-info-gifo {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 14px;
-      width: 100%;
-      .expanded-info-gifo-section {
+    .expanded-container {
+      .expanded-gifo-section {
         display: flex;
-        justify-content: left;
+        justify-content: center;
+        margin-top: 78px;
+        .expanded-gifo {
+          width: 90vw;
+          height: 40vh;
+        }
+      }
+      .expanded-container-info-gifo {
+        display: flex;
+        justify-content: space-between;
         align-items: center;
-        flex-wrap: wrap;
-        width: 40vw;
-        .user {
-          width: 100%;
-          @include gifos-font($second-font, $fourth-color, 15px, 400);
-          line-height: 18px;
-          padding-bottom: 6px;
-          text-transform: capitalize;
-        }
-        .gifo-title {
-          width: 100%;
-          @include gifos-font($first-font, $fourth-color, 1rem, 700);
-          line-height: 19px;
-          text-transform: capitalize;
-        }
-      }
-      .expanded-action-section {
-        width: 25vw;
-        display: flex;
-        .expanded-action-favorite {
-          content: url('/assets/icon-fav.svg');
-          margin: auto;
-          cursor: pointer;
-          &:hover {
-            content: url('/assets/icon-fav-hover.svg');
+        margin-top: 14px;
+        width: 100%;
+        .expanded-info-gifo-section {
+          display: flex;
+          justify-content: left;
+          align-items: center;
+          flex-wrap: wrap;
+          width: 40vw;
+          .user {
+            width: 100%;
+            @include gifos-font($second-font, $fourth-color, 15px, 400);
+            line-height: 18px;
+            padding-bottom: 6px;
+            text-transform: capitalize;
+          }
+          .gifo-title {
+            width: 100%;
+            @include gifos-font($first-font, $fourth-color, 1rem, 700);
+            line-height: 19px;
+            text-transform: capitalize;
           }
         }
-        .expanded-action-favorite-select {
-          content: url('/assets/icon-fav-active.svg');
-          &:hover {
+        .expanded-action-section {
+          width: 25vw;
+          display: flex;
+          .expanded-action-favorite {
+            content: url('/assets/icon-fav.svg');
+            margin: auto;
+            cursor: pointer;
+            &:hover {
+              content: url('/assets/icon-fav-hover.svg');
+            }
+          }
+          .expanded-action-favorite-select {
             content: url('/assets/icon-fav-active.svg');
+            &:hover {
+              content: url('/assets/icon-fav-active.svg');
+            }
           }
-        }
-        .expanded-action-download {
-          content: url('/assets/icon-download.svg');
-          cursor: pointer;
+          .expanded-action-delete-gif {
+            content: url('../assets/icon-trash-normal.svg');
+            &:hover {
+              content: url('../assets/icon-trash-hover.svg');
+            }
+          }
+          .expanded-action-download {
+            content: url('/assets/icon-download.svg');
+            cursor: pointer;
+          }
         }
       }
     }
@@ -89,13 +97,19 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      .expanded-gifo-section {
-        .expanded-gifo {
-          width: 100%;
+      .expanded-container {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        .expanded-gifo-section {
+          .expanded-gifo {
+            width: 80%;
+          }
         }
-      }
-      .expanded-container-info-gifo {
-        width: 70%;
+        .expanded-container-info-gifo {
+          width: 80%;
+        }
       }
     }
   }
@@ -103,9 +117,16 @@
 
 @media screen and (min-width: $laptop) {
   .expanded-gifo-container {
-    .expanded-gifo-section {
-      .expanded-gifo {
-        height: 400px;
+    main {
+      .expanded-container {
+        .expanded-gifo-section {
+          .expanded-gifo {
+            width: 80%;
+          }
+        }
+        .expanded-container-info-gifo {
+          width: 57%;
+        }
       }
     }
   }

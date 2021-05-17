@@ -15,6 +15,44 @@
     }
   }
   .gifos-grid-section {
+    margin: 46px 7vw;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    .gif-container {
+      display: inline-block;
+      width: 40vw;
+      margin-left: 2%;
+      margin-bottom: 1%;
+      .gif {
+        .gif-image {
+          width: 40vw;
+          height: 40vw;
+        }
+      }
+      .gif-action-container {
+        display: none;
+      }
+    }
+    .more-gifos {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      margin-top: 78px;
+      cursor: pointer;
+      span {
+        border: 2px solid $first-color;
+        border-radius: 25px;
+        @include gifos-font($first-font, $first-color, 13px, 700);
+        line-height: 1rem;
+        height: 50px;
+        padding: 17px 0;
+        text-align: center;
+        text-transform: uppercase;
+        vertical-align: middle;
+        width: 127px;
+      }
+    }
     .empty-gifos-grid {
       display: flex;
       flex-direction: column;
@@ -52,9 +90,121 @@
       width: 127px;
     }
   }
-  .video {
-    width: 90%;
-    height: 90%;
-    border: 1px solid blue;
+}
+
+@media screen and (min-width: $tablet) {
+  .gifos-container {
+    .gifos-grid-section {
+      .gif-container {
+        display: inline-block;
+        width: 27vw;
+        position: relative;
+        margin-bottom: 1%;
+        margin-left: 1.5%;
+        .gif {
+          &:hover + .gif-action-container {
+            display: inline-block;
+          }
+          .gif-image {
+            width: 27vw;
+            height: 27vw;
+          }
+        }
+        .gif-action-container {
+          background: $first-color-opacity;
+          width: 27vw;
+          height: 27vw;
+          position: absolute;
+          top: 0;
+          &:hover {
+            display: inline-block;
+          }
+          .gif-action {
+            display: flex;
+            justify-content: flex-end;
+            margin-right: 8px;
+            .img-action {
+              width: 32px;
+              height: 32px;
+              margin-left: 8px;
+              margin-top: 10px;
+              cursor: pointer;
+            }
+            .delete-action {
+              content: url('../assets/icon-trash-normal.svg');
+              &:hover {
+                content: url('../assets/icon-trash-hover.svg');
+              }
+            }
+            .download-action {
+              content: url('../assets/icon-download.svg');
+              &:hover {
+                content: url('../assets/icon-download-hover.svg');
+              }
+            }
+            .expand-action {
+              content: url('../assets/icon-max-normal.svg');
+              &:hover {
+                content: url('../assets/icon-max-hover.svg');
+              }
+            }
+          }
+        }
+        .gif-description {
+          display: flex;
+          justify-content: flex-start;
+          flex-direction: column;
+          margin-left: 8px;
+          position: absolute;
+          bottom: 40px;
+          .gif-user {
+            @include gifos-font($second-font, $second-color, 15px, 400);
+          }
+          .gif-title {
+            @include gifos-font($second-font, $second-color, 1rem, 700);
+          }
+        }
+      }
+      .empty-gifos-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        img {
+          margin-top: 30px;
+          content: url('/assets/icon-mis-gifos-sin-contenido.svg');
+          height: 100px;
+          width: 100px;
+        }
+        span {
+          @include gifos-font($first-font, $fav-text-color, 1rem, 700);
+          line-height: 18px;
+          margin-top: 23px;
+          text-align: center;
+          width: 70vw;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $laptop) {
+  .gifos-container {
+    .gifos-grid-section {
+      .gif-container {
+        width: 20vw;
+        height: 20vw;
+        margin-bottom: 1.5%;
+        .gif {
+          .gif-image {
+            width: 20vw;
+            height: 20vw;
+          }
+        }
+        .gif-action-container {
+          width: 20vw;
+          height: 20vw;
+        }
+      }
+    }
   }
 }

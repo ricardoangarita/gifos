@@ -10,13 +10,15 @@
         content: url('/assets/close-modo-noct.svg');
       }
     }
-    .expanded-container-info-gifo {
-      .expanded-info-gifo-section {
-        .user {
-          color: $second-color;
-        }
-        .gifo-title {
-          color: $second-color;
+    .expanded-container {
+      .expanded-container-info-gifo {
+        .expanded-info-gifo-section {
+          .user {
+            color: $second-color;
+          }
+          .gifo-title {
+            color: $second-color;
+          }
         }
       }
     }

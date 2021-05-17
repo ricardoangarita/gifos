@@ -194,6 +194,10 @@ main {
           line-height: 16px;
           width: 127px;
           padding-top: 18.5px;
+          &:hover {
+            background: $first-color;
+            color: $second-color;
+          }
         }
       }
     }
@@ -266,6 +270,9 @@ main {
         }
       }
     }
+  }
+  .community-gifos-hidden {
+    display: none;
   }
 }
 
@@ -537,9 +544,19 @@ main {
         width: 600px;
       }
       #gifos-grid {
-        img {
-          width: 20vw;
-          height: 20vw;
+        .img-group {
+          margin-bottom: 1.5%;
+          img {
+            width: 20vw;
+            height: 20vw;
+          }
+          .img-cover {
+            width: 20vw;
+            height: 20vw;
+            .gifo-description {
+              margin-top: 140px;
+            }
+          }
         }
       }
       .search-gifo-section {

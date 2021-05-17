@@ -90,6 +90,66 @@
           }
         }
       }
+      .gifos-container {
+        .gifos-mine {
+          span {
+            color: $second-color;
+          }
+        }
+        .more-gifos {
+          span {
+            border-color: $second-color;
+            color: $second-color;
+          }
+        }
+      }
+      .giphy-container {
+        .recorder-container {
+          .camera-container {
+            .camera-image {
+              content: url('../assets/camara-modo-noc.svg');
+            }
+          }
+          .outer-recorder {
+            .inner-recorder {
+              .text-container {
+                .first-text {
+                  color: $second-color;
+                }
+                .second-text {
+                  color: $second-color;
+                }
+                .third-text {
+                  color: $second-color;
+                }
+              }
+            }
+          }
+          .recorder-steps {
+            .step {
+              border-color: $second-color;
+              .number-step {
+                color: $second-color;
+              }
+            }
+            .timer {
+              color: $second-color;
+            }
+            .repeat-recorder {
+              color: $second-color;
+            }
+            .movie {
+              content: url('../assets/pelicula-modo-noc.svg');
+            }
+          }
+        }
+        .recorder {
+          border-color: $second-color;
+          .text-recorder {
+            color: $second-color;
+          }
+        }
+      }
       .community-gifos {
         background-color: $eighth-color;
         h2 {
