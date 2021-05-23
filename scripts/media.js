@@ -160,6 +160,15 @@ const StopRecorder = (recorder) => {
   });
 };
 
+const CopyLink = (url) => {
+  const elem = document.createElement('textarea');
+  elem.value = url;
+  document.body.appendChild(elem);
+  elem.select();
+  document.execCommand('copy');
+  document.body.removeChild(elem);
+};
+
 const DownloadGif = async (gifInfo) => {
   const gifUrl = gifInfo.url;
   const data = await fetch(gifUrl);
@@ -184,6 +193,10 @@ const ActionUploadGifo = (uploadGifoInfo) => {
 
   document.querySelector('.download-action').addEventListener('click', () => {
     DownloadGif(gif);
+  });
+
+  document.querySelector('.link-action').addEventListener('click', () => {
+    CopyLink(gif.url);
   });
 
   let gifos = localStorage.getItem('gifos');

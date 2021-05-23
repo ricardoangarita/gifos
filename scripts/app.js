@@ -132,7 +132,7 @@ async function LoadSection(htmlUrl) {
     let start = sessionStorage.getItem('gifoStart');
     let end = sessionStorage.getItem('gifoEnd');
 
-    if (myGifosList) {
+    if (myGifosList && myGifosList.length > 0) {
       myGifosList.slice(start, end).forEach((gifItem) => {
         const gifoInfo = {
           id: gifItem.id,
@@ -142,8 +142,7 @@ async function LoadSection(htmlUrl) {
         };
         const gifContainer = document.createElement('div');
         gifContainer.classList.add('gif-container');
-        gifContainer.classList.add(gifItem.id);
-
+        gifContainer.setAttribute('id', gifoInfo.id);
         const gif = document.createElement('div');
         gif.classList.add('gif');
         gif.addEventListener('click', () => {
@@ -882,8 +881,9 @@ function GifRemove(id) {
       gifos.splice(index, 1);
     }
   });
-  const removedGifo = document.querySelector(`.${id}`);
+  const removedGifo = document.getElementById(id);
   gifoGrid.removeChild(removedGifo);
+  localStorage.setItem('gifos', JSON.stringify(gifos));
 }
 
 async function DownloadGif(url) {
