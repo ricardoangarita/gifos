@@ -5,13 +5,13 @@
     header {
       nav {
         #logo {
-          content: url('/assets/logo-mobile-modo-noct.svg');
+          content: url('../assets/logo-mobile-modo-noct.svg');
         }
         .burguer-menu {
-          content: url('/assets/burger-modo-noct.svg');
+          content: url('../assets/burger-modo-noct.svg');
         }
         .close-burguer-menu {
-          content: url('/assets/close-modo-noct.svg');
+          content: url('../assets/close-modo-noct.svg');
         }
         .cover-menu {
           background-color: $fourth-color;
@@ -44,13 +44,13 @@
             color: $second-color;
           }
           .search-icon {
-            content: url('/assets/icon-search-modo-noct.svg');
+            content: url('../assets/icon-search-modo-noct.svg');
             &:hover {
               cursor: pointer;
             }
           }
           .close-search-icon {
-            content: url('/assets/close-modo-noct.svg');
+            content: url('../assets/close-modo-noct.svg');
           }
         }
         .trending {
@@ -163,17 +163,17 @@
         .gallery-container {
           .move-left-container {
             .move-left {
-              content: url('/assets/button-slider-left-md-noct.svg');
+              content: url('../assets/button-slider-left-md-noct.svg');
               &:hover {
-                content: url('/assets/button-slider-left-hover.svg');
+                content: url('../assets/button-slider-left-hover.svg');
               }
             }
           }
           .move-right-container {
             .move-right {
-              content: url('/assets/button-slider-right-md-noct.svg');
+              content: url('../assets/button-slider-right-md-noct.svg');
               &:hover {
-                content: url('/assets/Button-Slider-right-hover.svg');
+                content: url('../assets/Button-Slider-right-hover.svg');
               }
             }
           }
@@ -186,13 +186,13 @@
           color: $second-color;
         }
         #facebook {
-          content: url('/assets/icon_facebook_noc.svg');
+          content: url('../assets/icon_facebook_noc.svg');
         }
         #twitter {
-          content: url('/assets/icon_twitter_noc.svg');
+          content: url('../assets/icon_twitter_noc.svg');
         }
         #instagram {
-          content: url('/assets/icon_instagram_noc.svg');
+          content: url('../assets/icon_instagram_noc.svg');
         }
         .copyright {
           color: $second-color;

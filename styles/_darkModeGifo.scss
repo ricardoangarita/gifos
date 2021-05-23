@@ -4,10 +4,10 @@
     @extend %night-border;
     .header-section {
       .expanded-logo {
-        content: url('/assets/logo-mobile-modo-noct.svg');
+        content: url('../assets/logo-mobile-modo-noct.svg');
       }
       .expanded-close {
-        content: url('/assets/close-modo-noct.svg');
+        content: url('../assets/close-modo-noct.svg');
       }
     }
     .expanded-container {

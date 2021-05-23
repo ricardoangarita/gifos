@@ -17,11 +17,11 @@
       left: 0;
       top: 20%;
       .camera-image {
-        content: url('/assets/camara.svg');
+        content: url('../assets/camara.svg');
         width: 90px;
       }
       .camera-light {
-        content: url('/assets/element-luz-camara.svg');
+        content: url('../assets/element-luz-camara.svg');
         width: 60px;
       }
     }
@@ -196,7 +196,7 @@
       }
 
       .movie {
-        content: url('/assets/pelicula.svg');
+        content: url('../assets/pelicula.svg');
         position: absolute;
         right: -130px;
         top: -30px;

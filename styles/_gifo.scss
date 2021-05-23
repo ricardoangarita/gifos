@@ -7,12 +7,12 @@
     display: flex;
     justify-content: space-between;
     .expanded-logo {
-      content: url('/assets/logo-mobile.svg');
+      content: url('../assets/logo-mobile.svg');
       opacity: 0.2;
     }
     .expanded-close {
       margin-top: 30px;
-      content: url('/assets/close.svg');
+      content: url('../assets/close.svg');
       cursor: pointer;
     }
   }
@@ -61,17 +61,17 @@
           width: 25vw;
           display: flex;
           .expanded-action-favorite {
-            content: url('/assets/icon-fav.svg');
+            content: url('../assets/icon-fav.svg');
             margin: auto;
             cursor: pointer;
             &:hover {
-              content: url('/assets/icon-fav-hover.svg');
+              content: url('../assets/icon-fav-hover.svg');
             }
           }
           .expanded-action-favorite-select {
-            content: url('/assets/icon-fav-active.svg');
+            content: url('../assets/icon-fav-active.svg');
             &:hover {
-              content: url('/assets/icon-fav-active.svg');
+              content: url('../assets/icon-fav-active.svg');
             }
           }
           .expanded-action-delete-gif {
@@ -81,7 +81,7 @@
             }
           }
           .expanded-action-download {
-            content: url('/assets/icon-download.svg');
+            content: url('../assets/icon-download.svg');
             cursor: pointer;
           }
         }

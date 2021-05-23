@@ -51,19 +51,19 @@ main {
         }
         .search-icon {
           margin-right: 5.3%;
-          content: url('/assets/icon-search.svg');
+          content: url('../assets/icon-search.svg');
           &:hover {
             cursor: pointer;
           }
         }
         .close-search-icon {
-          content: url('/assets/close.svg');
+          content: url('../assets/close.svg');
         }
       }
       .typo-search-icon {
         opacity: 0;
         margin-left: 5vw;
-        content: url('/assets/icon-search-type.svg');
+        content: url('../assets/icon-search-type.svg');
       }
       .show-typo-search-icon {
         opacity: 1;
@@ -236,7 +236,7 @@ main {
           display: none;
           height: 40px;
           width: 40px;
-          content: url('/assets/button-slider-left.svg');
+          content: url('../assets/button-slider-left.svg');
         }
       }
       .trending-container {
@@ -266,7 +266,7 @@ main {
           display: none;
           height: 40px;
           width: 40px;
-          content: url('/assets/button-slider-right.svg');
+          content: url('../assets/button-slider-right.svg');
         }
       }
     }
@@ -373,24 +373,24 @@ main {
                 margin-left: 8px;
               }
               .favorite-action {
-                content: url('/assets/icon-fav.svg');
+                content: url('../assets/icon-fav.svg');
                 &:hover {
-                  content: url('/assets/icon-fav-hover.svg');
+                  content: url('../assets/icon-fav-hover.svg');
                 }
                 &:active {
-                  content: url('/assets/icon-fav-active.svg');
+                  content: url('../assets/icon-fav-active.svg');
                 }
               }
               .download-action {
-                content: url('/assets/icon-download.svg');
+                content: url('../assets/icon-download.svg');
                 &:hover {
-                  content: url('/assets/icon-download-hover.svg');
+                  content: url('../assets/icon-download-hover.svg');
                 }
               }
               .expand-action {
-                content: url('/assets/icon-max-normal.svg');
+                content: url('../assets/icon-max-normal.svg');
                 &:hover {
-                  content: url('/assets/icon-max-hover.svg');
+                  content: url('../assets/icon-max-hover.svg');
                 }
               }
             }
@@ -444,7 +444,7 @@ main {
           .move-left {
             display: block;
             &:hover {
-              content: url('/assets/button-slider-left-hover.svg');
+              content: url('../assets/button-slider-left-hover.svg');
             }
           }
         }
@@ -480,24 +480,24 @@ main {
                 justify-content: flex-end;
                 margin-right: 8px;
                 .favorite-action {
-                  content: url('/assets/icon-fav.svg');
+                  content: url('../assets/icon-fav.svg');
                   &:hover {
-                    content: url('/assets/icon-fav-hover.svg');
+                    content: url('../assets/icon-fav-hover.svg');
                   }
                   &:active {
-                    content: url('/assets/icon-fav-active.svg');
+                    content: url('../assets/icon-fav-active.svg');
                   }
                 }
                 .download-action {
-                  content: url('/assets/icon-download.svg');
+                  content: url('../assets/icon-download.svg');
                   &:hover {
-                    content: url('/assets/icon-download-hover.svg');
+                    content: url('../assets/icon-download-hover.svg');
                   }
                 }
                 .expand-action {
-                  content: url('/assets/icon-max-normal.svg');
+                  content: url('../assets/icon-max-normal.svg');
                   &:hover {
-                    content: url('/assets/icon-max-hover.svg');
+                    content: url('../assets/icon-max-hover.svg');
                   }
                 }
               }
@@ -528,7 +528,7 @@ main {
           .move-right {
             display: block;
             &:hover {
-              content: url('/assets/Button-Slider-right-hover.svg');
+              content: url('../assets/Button-Slider-right-hover.svg');
             }
           }
         }

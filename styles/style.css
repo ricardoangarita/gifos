@@ -46,7 +46,7 @@ header nav .display-cover-menu {
 }
 
 header nav #logo {
-  content: url("/assets/logo-mobile.svg");
+  content: url("../assets/logo-mobile.svg");
   padding: 5vw 0 2.9vw 5.9vw;
 }
 
@@ -172,7 +172,7 @@ header nav ul .plus-menu-item {
 @media screen and (min-width: 1024px) {
   header nav #logo {
     padding-top: 1.5vw;
-    content: url("/assets/logo-desktop.svg");
+    content: url("../assets/logo-desktop.svg");
   }
   header nav .cover-menu ul {
     width: 40vw;
@@ -297,7 +297,7 @@ main .gifos .search-gifo-section .search-bar #search-gifos::placeholder {
 
 main .gifos .search-gifo-section .search-bar .search-icon {
   margin-right: 5.3%;
-  content: url("/assets/icon-search.svg");
+  content: url("../assets/icon-search.svg");
 }
 
 main .gifos .search-gifo-section .search-bar .search-icon:hover {
@@ -305,13 +305,13 @@ main .gifos .search-gifo-section .search-bar .search-icon:hover {
 }
 
 main .gifos .search-gifo-section .search-bar .close-search-icon {
-  content: url("/assets/close.svg");
+  content: url("../assets/close.svg");
 }
 
 main .gifos .search-gifo-section .typo-search-icon {
   opacity: 0;
   margin-left: 5vw;
-  content: url("/assets/icon-search-type.svg");
+  content: url("../assets/icon-search-type.svg");
 }
 
 main .gifos .search-gifo-section .show-typo-search-icon {
@@ -588,7 +588,7 @@ main .community-gifos .gallery-container .move-left-container .move-left {
   display: none;
   height: 40px;
   width: 40px;
-  content: url("/assets/button-slider-left.svg");
+  content: url("../assets/button-slider-left.svg");
 }
 
 main .community-gifos .gallery-container .trending-container {
@@ -624,7 +624,7 @@ main .community-gifos .gallery-container .move-right-container .move-right {
   display: none;
   height: 40px;
   width: 40px;
-  content: url("/assets/button-slider-right.svg");
+  content: url("../assets/button-slider-right.svg");
 }
 
 main .community-gifos-hidden {
@@ -741,25 +741,25 @@ main .community-gifos-hidden {
     margin-left: 8px;
   }
   main .gifos #gifos-grid .img-group .img-cover .img-action-container .favorite-action {
-    content: url("/assets/icon-fav.svg");
+    content: url("../assets/icon-fav.svg");
   }
   main .gifos #gifos-grid .img-group .img-cover .img-action-container .favorite-action:hover {
-    content: url("/assets/icon-fav-hover.svg");
+    content: url("../assets/icon-fav-hover.svg");
   }
   main .gifos #gifos-grid .img-group .img-cover .img-action-container .favorite-action:active {
-    content: url("/assets/icon-fav-active.svg");
+    content: url("../assets/icon-fav-active.svg");
   }
   main .gifos #gifos-grid .img-group .img-cover .img-action-container .download-action {
-    content: url("/assets/icon-download.svg");
+    content: url("../assets/icon-download.svg");
   }
   main .gifos #gifos-grid .img-group .img-cover .img-action-container .download-action:hover {
-    content: url("/assets/icon-download-hover.svg");
+    content: url("../assets/icon-download-hover.svg");
   }
   main .gifos #gifos-grid .img-group .img-cover .img-action-container .expand-action {
-    content: url("/assets/icon-max-normal.svg");
+    content: url("../assets/icon-max-normal.svg");
   }
   main .gifos #gifos-grid .img-group .img-cover .img-action-container .expand-action:hover {
-    content: url("/assets/icon-max-hover.svg");
+    content: url("../assets/icon-max-hover.svg");
   }
   main .gifos #gifos-grid .img-group .img-cover .gifo-description {
     display: -webkit-box;
@@ -833,7 +833,7 @@ main .community-gifos-hidden {
     display: block;
   }
   main .community-gifos .gallery-container .move-left-container .move-left:hover {
-    content: url("/assets/button-slider-left-hover.svg");
+    content: url("../assets/button-slider-left-hover.svg");
   }
   main .community-gifos .gallery-container .trending-container {
     width: 80%;
@@ -875,25 +875,25 @@ main .community-gifos-hidden {
     margin-right: 8px;
   }
   main .community-gifos .gallery-container .trending-container .img-group .img-cover .img-action-container .favorite-action {
-    content: url("/assets/icon-fav.svg");
+    content: url("../assets/icon-fav.svg");
   }
   main .community-gifos .gallery-container .trending-container .img-group .img-cover .img-action-container .favorite-action:hover {
-    content: url("/assets/icon-fav-hover.svg");
+    content: url("../assets/icon-fav-hover.svg");
   }
   main .community-gifos .gallery-container .trending-container .img-group .img-cover .img-action-container .favorite-action:active {
-    content: url("/assets/icon-fav-active.svg");
+    content: url("../assets/icon-fav-active.svg");
   }
   main .community-gifos .gallery-container .trending-container .img-group .img-cover .img-action-container .download-action {
-    content: url("/assets/icon-download.svg");
+    content: url("../assets/icon-download.svg");
   }
   main .community-gifos .gallery-container .trending-container .img-group .img-cover .img-action-container .download-action:hover {
-    content: url("/assets/icon-download-hover.svg");
+    content: url("../assets/icon-download-hover.svg");
   }
   main .community-gifos .gallery-container .trending-container .img-group .img-cover .img-action-container .expand-action {
-    content: url("/assets/icon-max-normal.svg");
+    content: url("../assets/icon-max-normal.svg");
   }
   main .community-gifos .gallery-container .trending-container .img-group .img-cover .img-action-container .expand-action:hover {
-    content: url("/assets/icon-max-hover.svg");
+    content: url("../assets/icon-max-hover.svg");
   }
   main .community-gifos .gallery-container .trending-container .img-group .img-cover .gifo-description {
     display: -webkit-box;
@@ -938,7 +938,7 @@ main .community-gifos-hidden {
     display: block;
   }
   main .community-gifos .gallery-container .move-right-container .move-right:hover {
-    content: url("/assets/Button-Slider-right-hover.svg");
+    content: url("../assets/Button-Slider-right-hover.svg");
   }
 }
 
@@ -1079,7 +1079,7 @@ main .community-gifos-hidden {
 
 .favorite .favorite-list-section .empty-favorite-grid img {
   margin-top: 30px;
-  content: url("/assets/icon-fav-sin-contenido.svg");
+  content: url("../assets/icon-fav-sin-contenido.svg");
   height: 100px;
   width: 100px;
 }
@@ -1133,19 +1133,19 @@ main .community-gifos-hidden {
     margin-left: 8px;
   }
   .favorite .favorite-list-section .favorite-grid .img-group .img-cover .img-action-container .favorite-action {
-    content: url("/assets/icon-fav-active.svg");
+    content: url("../assets/icon-fav-active.svg");
   }
   .favorite .favorite-list-section .favorite-grid .img-group .img-cover .img-action-container .download-action {
-    content: url("/assets/icon-download.svg");
+    content: url("../assets/icon-download.svg");
   }
   .favorite .favorite-list-section .favorite-grid .img-group .img-cover .img-action-container .download-action:hover {
-    content: url("/assets/icon-download-hover.svg");
+    content: url("../assets/icon-download-hover.svg");
   }
   .favorite .favorite-list-section .favorite-grid .img-group .img-cover .img-action-container .expand-action {
-    content: url("/assets/icon-max-normal.svg");
+    content: url("../assets/icon-max-normal.svg");
   }
   .favorite .favorite-list-section .favorite-grid .img-group .img-cover .img-action-container .expand-action:hover {
-    content: url("/assets/icon-max-hover.svg");
+    content: url("../assets/icon-max-hover.svg");
   }
   .favorite .favorite-list-section .favorite-grid .img-group .img-cover .gifo-description {
     display: -webkit-box;
@@ -1300,7 +1300,7 @@ main .community-gifos-hidden {
 
 .gifos-container .gifos-grid-section .empty-gifos-grid img {
   margin-top: 30px;
-  content: url("/assets/icon-mis-gifos-sin-contenido.svg");
+  content: url("../assets/icon-mis-gifos-sin-contenido.svg");
   height: 100px;
   width: 100px;
 }
@@ -1445,7 +1445,7 @@ main .community-gifos-hidden {
   }
   .gifos-container .gifos-grid-section .empty-gifos-grid img {
     margin-top: 30px;
-    content: url("/assets/icon-mis-gifos-sin-contenido.svg");
+    content: url("../assets/icon-mis-gifos-sin-contenido.svg");
     height: 100px;
     width: 100px;
   }
@@ -1516,15 +1516,15 @@ footer .social-media-section .social-media-icon img {
 }
 
 footer .social-media-section .social-media-icon #facebook:hover {
-  content: url("/assets/icon_facebook_hover.svg");
+  content: url("../assets/icon_facebook_hover.svg");
 }
 
 footer .social-media-section .social-media-icon #twitter:hover {
-  content: url("/assets/icon-twitter-hover.svg");
+  content: url("../assets/icon-twitter-hover.svg");
 }
 
 footer .social-media-section .social-media-icon #instagram:hover {
-  content: url("/assets/icon_instagram-hover.svg");
+  content: url("../assets/icon_instagram-hover.svg");
 }
 
 footer .social-media-section .copyright {
@@ -1572,15 +1572,15 @@ footer .social-media-section .copyright {
 }
 
 .dark-mode .container header nav #logo {
-  content: url("/assets/logo-mobile-modo-noct.svg");
+  content: url("../assets/logo-mobile-modo-noct.svg");
 }
 
 .dark-mode .container header nav .burguer-menu {
-  content: url("/assets/burger-modo-noct.svg");
+  content: url("../assets/burger-modo-noct.svg");
 }
 
 .dark-mode .container header nav .close-burguer-menu {
-  content: url("/assets/close-modo-noct.svg");
+  content: url("../assets/close-modo-noct.svg");
 }
 
 .dark-mode .container header nav .cover-menu {
@@ -1618,7 +1618,7 @@ footer .social-media-section .copyright {
 }
 
 .dark-mode .container main .gifos .search-gifo-section .search-icon {
-  content: url("/assets/icon-search-modo-noct.svg");
+  content: url("../assets/icon-search-modo-noct.svg");
 }
 
 .dark-mode .container main .gifos .search-gifo-section .search-icon:hover {
@@ -1626,7 +1626,7 @@ footer .social-media-section .copyright {
 }
 
 .dark-mode .container main .gifos .search-gifo-section .close-search-icon {
-  content: url("/assets/close-modo-noct.svg");
+  content: url("../assets/close-modo-noct.svg");
 }
 
 .dark-mode .container main .gifos .trending span {
@@ -1721,19 +1721,19 @@ footer .social-media-section .copyright {
 }
 
 .dark-mode .container main .community-gifos .gallery-container .move-left-container .move-left {
-  content: url("/assets/button-slider-left-md-noct.svg");
+  content: url("../assets/button-slider-left-md-noct.svg");
 }
 
 .dark-mode .container main .community-gifos .gallery-container .move-left-container .move-left:hover {
-  content: url("/assets/button-slider-left-hover.svg");
+  content: url("../assets/button-slider-left-hover.svg");
 }
 
 .dark-mode .container main .community-gifos .gallery-container .move-right-container .move-right {
-  content: url("/assets/button-slider-right-md-noct.svg");
+  content: url("../assets/button-slider-right-md-noct.svg");
 }
 
 .dark-mode .container main .community-gifos .gallery-container .move-right-container .move-right:hover {
-  content: url("/assets/Button-Slider-right-hover.svg");
+  content: url("../assets/Button-Slider-right-hover.svg");
 }
 
 .dark-mode .container footer .social-media-section span {
@@ -1741,15 +1741,15 @@ footer .social-media-section .copyright {
 }
 
 .dark-mode .container footer .social-media-section #facebook {
-  content: url("/assets/icon_facebook_noc.svg");
+  content: url("../assets/icon_facebook_noc.svg");
 }
 
 .dark-mode .container footer .social-media-section #twitter {
-  content: url("/assets/icon_twitter_noc.svg");
+  content: url("../assets/icon_twitter_noc.svg");
 }
 
 .dark-mode .container footer .social-media-section #instagram {
-  content: url("/assets/icon_instagram_noc.svg");
+  content: url("../assets/icon_instagram_noc.svg");
 }
 
 .dark-mode .container footer .social-media-section .copyright {
@@ -1773,13 +1773,13 @@ footer .social-media-section .copyright {
 }
 
 .expanded-gifo-container .header-section .expanded-logo {
-  content: url("/assets/logo-mobile.svg");
+  content: url("../assets/logo-mobile.svg");
   opacity: 0.2;
 }
 
 .expanded-gifo-container .header-section .expanded-close {
   margin-top: 30px;
-  content: url("/assets/close.svg");
+  content: url("../assets/close.svg");
   cursor: pointer;
 }
 
@@ -1872,21 +1872,21 @@ footer .social-media-section .copyright {
 }
 
 .expanded-gifo-container main .expanded-container .expanded-container-info-gifo .expanded-action-section .expanded-action-favorite {
-  content: url("/assets/icon-fav.svg");
+  content: url("../assets/icon-fav.svg");
   margin: auto;
   cursor: pointer;
 }
 
 .expanded-gifo-container main .expanded-container .expanded-container-info-gifo .expanded-action-section .expanded-action-favorite:hover {
-  content: url("/assets/icon-fav-hover.svg");
+  content: url("../assets/icon-fav-hover.svg");
 }
 
 .expanded-gifo-container main .expanded-container .expanded-container-info-gifo .expanded-action-section .expanded-action-favorite-select {
-  content: url("/assets/icon-fav-active.svg");
+  content: url("../assets/icon-fav-active.svg");
 }
 
 .expanded-gifo-container main .expanded-container .expanded-container-info-gifo .expanded-action-section .expanded-action-favorite-select:hover {
-  content: url("/assets/icon-fav-active.svg");
+  content: url("../assets/icon-fav-active.svg");
 }
 
 .expanded-gifo-container main .expanded-container .expanded-container-info-gifo .expanded-action-section .expanded-action-delete-gif {
@@ -1898,7 +1898,7 @@ footer .social-media-section .copyright {
 }
 
 .expanded-gifo-container main .expanded-container .expanded-container-info-gifo .expanded-action-section .expanded-action-download {
-  content: url("/assets/icon-download.svg");
+  content: url("../assets/icon-download.svg");
   cursor: pointer;
 }
 
@@ -1955,11 +1955,11 @@ footer .social-media-section .copyright {
 }
 
 .darkMode .expanded-gifo-container .header-section .expanded-logo {
-  content: url("/assets/logo-mobile-modo-noct.svg");
+  content: url("../assets/logo-mobile-modo-noct.svg");
 }
 
 .darkMode .expanded-gifo-container .header-section .expanded-close {
-  content: url("/assets/close-modo-noct.svg");
+  content: url("../assets/close-modo-noct.svg");
 }
 
 .darkMode .expanded-gifo-container .expanded-container .expanded-container-info-gifo .expanded-info-gifo-section .user {
@@ -2017,12 +2017,12 @@ footer .social-media-section .copyright {
 }
 
 .giphy-container .recorder-container .camera-container .camera-image {
-  content: url("/assets/camara.svg");
+  content: url("../assets/camara.svg");
   width: 90px;
 }
 
 .giphy-container .recorder-container .camera-container .camera-light {
-  content: url("/assets/element-luz-camara.svg");
+  content: url("../assets/element-luz-camara.svg");
   width: 60px;
 }
 
@@ -2273,7 +2273,7 @@ footer .social-media-section .copyright {
 }
 
 .giphy-container .recorder-container .recorder-steps .movie {
-  content: url("/assets/pelicula.svg");
+  content: url("../assets/pelicula.svg");
   position: absolute;
   right: -130px;
   top: -30px;

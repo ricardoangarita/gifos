@@ -62,7 +62,7 @@
 
       img {
         margin-top: 30px;
-        content: url("/assets/icon-fav-sin-contenido.svg");
+        content: url('../assets/icon-fav-sin-contenido.svg');
         height: 100px;
         width: 100px;
       }
@@ -111,18 +111,18 @@
                 margin-left: 8px;
               }
               .favorite-action {
-                content: url("/assets/icon-fav-active.svg");
+                content: url('../assets/icon-fav-active.svg');
               }
               .download-action {
-                content: url("/assets/icon-download.svg");
+                content: url('../assets/icon-download.svg');
                 &:hover {
-                  content: url("/assets/icon-download-hover.svg");
+                  content: url('../assets/icon-download-hover.svg');
                 }
               }
               .expand-action {
-                content: url("/assets/icon-max-normal.svg");
+                content: url('../assets/icon-max-normal.svg');
                 &:hover {
-                  content: url("/assets/icon-max-hover.svg");
+                  content: url('../assets/icon-max-hover.svg');
                 }
               }
             }

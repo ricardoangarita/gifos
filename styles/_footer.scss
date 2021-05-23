@@ -20,17 +20,17 @@ footer {
       }
       #facebook {
         &:hover {
-          content: url('/assets/icon_facebook_hover.svg');
+          content: url('../assets/icon_facebook_hover.svg');
         }
       }
       #twitter {
         &:hover {
-          content: url('/assets/icon-twitter-hover.svg');
+          content: url('../assets/icon-twitter-hover.svg');
         }
       }
       #instagram {
         &:hover {
-          content: url('/assets/icon_instagram-hover.svg');
+          content: url('../assets/icon_instagram-hover.svg');
         }
       }
     }
