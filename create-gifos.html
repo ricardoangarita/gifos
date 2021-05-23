@@ -1,64 +1,76 @@
-<div class="giphy-container">
-  <div class="recorder-container">
-    <div class="camera-container">
-      <img class="camera-image" alt="camara" />
-      <img class="camera-light" alt="luz de la camara" />
-    </div>
-    <div class="outer-recorder">
-      <div class="inner-recorder">
-        <div class="text-container">
-          <p class="first-text">
-            Aquí podrás crear tus propios <span class="gifos-text">GIFOS</span>
-          </p>
-          <p class="second-text">!Crea tu GIFO en sólo 3 pasos!</p>
-          <p class="third-text">
-            (sólo necesitas una cámara para grabar un video)
-          </p>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crea tus Gifos</title>
+  </head>
+  <body>
+    <div class="giphy-container">
+      <div class="recorder-container">
+        <div class="camera-container">
+          <img class="camera-image" alt="camara" src="#" />
+          <img class="camera-light" alt="luz de la camara" src="#" />
         </div>
-        <video class="video video-hidden"></video>
-        <div class="upload-gif-container upload-gif-container-hidden">
-          <div
-            class="
-              upload-gif-action-container upload-gif-action-container-hidden
-            "
-          >
-            <img class="download-action" alt="descargar gif" />
-            <img class="link-action" alt="link del gif" />
+        <div class="outer-recorder">
+          <div class="inner-recorder">
+            <div class="text-container">
+              <p class="first-text">
+                Aquí podrás crear tus propios
+                <span class="gifos-text">GIFOS</span>
+              </p>
+              <p class="second-text">!Crea tu GIFO en sólo 3 pasos!</p>
+              <p class="third-text">
+                (sólo necesitas una cámara para grabar un video)
+              </p>
+            </div>
+            <video class="video video-hidden"></video>
+            <div class="upload-gif-container upload-gif-container-hidden">
+              <div
+                class="
+                  upload-gif-action-container upload-gif-action-container-hidden
+                "
+              >
+                <img class="download-action" alt="descargar gif" src="#" />
+                <img class="link-action" alt="link del gif" src="#" />
+              </div>
+              <img alt="estatus del gif" class="gif-status-loading" src="#" />
+              <span class="gif-status-text"></span>
+            </div>
           </div>
-          <img alt="estatus del gif" class="gif-status-loading" />
-          <span class="gif-status-text"></span>
+        </div>
+        <div class="recorder-steps">
+          <div class="step-one step">
+            <span class="number-step-one number-step">1</span>
+          </div>
+          <div class="step-two step">
+            <span class="number-step-two number-step">2</span>
+          </div>
+          <div class="step-three step">
+            <span class="number-step-three number-step">3</span>
+            <span class="timer timer-hidden"></span>
+          </div>
+          <img class="movie" alt="carrete de pelicula" src="#" />
         </div>
       </div>
+      <div class="recorder-line"></div>
+
+      <div class="recorder request-recorder">
+        <span class="text-recorder">COMENZAR</span>
+      </div>
+
+      <div class="recorder start-recorder recorder-hidden">
+        <span class="text-recorder">GRABAR</span>
+      </div>
+
+      <div class="recorder stop-recorder recorder-hidden">
+        <span class="text-recorder">FINALIZAR</span>
+      </div>
+
+      <div class="recorder upload-recorder recorder-hidden">
+        <span class="text-recorder">SUBIR GIFO</span>
+      </div>
     </div>
-    <div class="recorder-steps">
-      <div class="step-one step">
-        <span class="number-step-one number-step">1</span>
-      </div>
-      <div class="step-two step">
-        <span class="number-step-two number-step">2</span>
-      </div>
-      <div class="step-three step">
-        <span class="number-step-three number-step">3</span>
-        <span class="timer timer-hidden"></span>
-      </div>
-      <img class="movie" alt="carrete de pelicula" />
-    </div>
-  </div>
-  <div class="recorder-line"></div>
-
-  <div class="recorder request-recorder">
-    <span class="text-recorder">COMENZAR</span>
-  </div>
-
-  <div class="recorder start-recorder recorder-hidden">
-    <span class="text-recorder">GRABAR</span>
-  </div>
-
-  <div class="recorder stop-recorder recorder-hidden">
-    <span class="text-recorder">FINALIZAR</span>
-  </div>
-
-  <div class="recorder upload-recorder recorder-hidden">
-    <span class="text-recorder">SUBIR GIFO</span>
-  </div>
-</div>
+  </body>
+</html>
